@@ -17,26 +17,8 @@
 
 package de.schildbach.wallet.ui;
 
-import java.util.ArrayList;
-import java.util.Collection;
-import java.util.HashSet;
-import java.util.List;
-import java.util.Map;
-import java.util.Set;
-import java.util.concurrent.RejectedExecutionException;
-
-import javax.annotation.Nonnull;
-
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
-
 import android.app.Activity;
-import android.content.BroadcastReceiver;
-import android.content.ComponentName;
-import android.content.Context;
-import android.content.Intent;
-import android.content.IntentFilter;
-import android.content.ServiceConnection;
+import android.content.*;
 import android.net.Uri;
 import android.os.Bundle;
 import android.os.IBinder;
@@ -50,18 +32,13 @@ import android.view.ViewGroup;
 import android.widget.BaseAdapter;
 import android.widget.ListView;
 import android.widget.TextView;
-
 import com.actionbarsherlock.app.SherlockListFragment;
 import com.actionbarsherlock.view.ActionMode;
 import com.actionbarsherlock.view.Menu;
 import com.actionbarsherlock.view.MenuInflater;
 import com.actionbarsherlock.view.MenuItem;
-import com.google.bitcoin.core.Block;
-import com.google.bitcoin.core.Sha256Hash;
-import com.google.bitcoin.core.StoredBlock;
-import com.google.bitcoin.core.Transaction;
-import com.google.bitcoin.core.Wallet;
-
+import com.google.bitcoin.core.*;
+import com.hashengineering.crypto.difficulty.Utils;
 import de.schildbach.wallet.Configuration;
 import de.schildbach.wallet.Constants;
 import de.schildbach.wallet.WalletApplication;
@@ -69,7 +46,12 @@ import de.schildbach.wallet.service.BlockchainService;
 import de.schildbach.wallet.service.BlockchainServiceImpl;
 import de.schildbach.wallet.util.WalletUtils;
 import hashengineering.digitalcoin.wallet.R;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
+import javax.annotation.Nonnull;
+import java.util.*;
+import java.util.concurrent.RejectedExecutionException;
 
 /**
  * @author Andreas Schildbach
@@ -282,7 +264,7 @@ public final class BlockListFragment extends SherlockListFragment
 		{
 			final ViewGroup row;
 			if (convertView == null)
-				row = (ViewGroup) getLayoutInflater(null).inflate(R.layout.block_row, null);
+				row = (ViewGroup) getLayoutInflater(null).inflate(R.layout.block_row_extra, null);
 			else
 				row = (ViewGroup) convertView;
 
@@ -300,7 +282,40 @@ public final class BlockListFragment extends SherlockListFragment
 			final TextView rowHash = (TextView) row.findViewById(R.id.block_list_row_hash);
 			rowHash.setText(WalletUtils.formatHash(null, header.getHashAsString(), 8, 0, ' '));
 
-			final int transactionChildCount = row.getChildCount() - ROW_BASE_CHILD_COUNT;
+            final TextView rowAlgo = (TextView) row.findViewById(R.id.block_list_row_algo);
+            if(rowAlgo != null)
+                rowAlgo.setText(header.getAlgoName());
+
+            final TextView rowDiff = (TextView) row.findViewById(R.id.block_list_row_difficulty);
+            if(rowDiff != null)
+                rowDiff.setText(String.format("%.03f", Utils.ConvertBitsToDouble(header.getDifficultyTarget())));
+
+            double hashrate = Utils.getNetworkHashRate(storedBlock, ((BlockchainServiceImpl) service).getBlockStore());
+            final TextView rowHashRate = (TextView) row.findViewById(R.id.block_list_row_hashrate);
+
+            int order = 0;
+            String [] strOrder = {"", "K", "M", "G", "T", "P"};
+
+            if(hashrate > 1e3)
+                order = 1;
+            if(hashrate > 1e6)
+                order = 2;
+            if(hashrate > 1e9)
+                order = 3;
+            if(hashrate > 1e12)
+                order = 4;
+            if(hashrate > 1e15)
+                order = 5;
+
+
+
+
+            if(hashrate >= 0)
+                rowHashRate.setText(String.format("%d %sH/s", (long)(hashrate/java.lang.Math.pow(10, order*3)), strOrder[order]));
+            else rowHashRate.setText("N/A");
+
+
+            final int transactionChildCount = row.getChildCount() - ROW_BASE_CHILD_COUNT;
 			int iTransactionView = 0;
 
 			if (transactions != null)

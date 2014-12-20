@@ -1,6 +1,10 @@
 digitalcoin Wallet
 -----------------
 v3.01.3561
+* Added Native support for X11 (faster, lower battery usage)
+* Added information on the Network Monitor for Hashrate, Difficulty, algorithm for each block.
+
+v3.01.3561
 * Fixed Version 3 fork bug
 * updated checkpoints
 

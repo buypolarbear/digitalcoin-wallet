@@ -36,7 +36,6 @@ import com.google.bitcoin.core.*;
 import com.google.bitcoin.core.TransactionConfidence.ConfidenceType;
 import com.google.bitcoin.core.Wallet.BalanceType;
 import com.google.bitcoin.net.discovery.DnsDiscovery;
-import com.google.bitcoin.net.discovery.IrcDiscovery;
 import com.google.bitcoin.net.discovery.PeerDiscovery;
 import com.google.bitcoin.net.discovery.PeerDiscoveryException;
 import com.google.bitcoin.store.BlockStore;
@@ -50,7 +49,6 @@ import de.schildbach.wallet.util.GenericUtils;
 import de.schildbach.wallet.util.ThrottlingWalletChangeListener;
 import de.schildbach.wallet.util.WalletUtils;
 import hashengineering.digitalcoin.wallet.R;
-import org.litecoin.LitecoinPeerDBDiscovery;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
@@ -406,25 +404,25 @@ public class BlockchainServiceImpl extends android.app.Service implements Blockc
 				peerGroup.addPeerDiscovery(new PeerDiscovery()
 				{
 					private final PeerDiscovery normalPeerDiscovery = new DnsDiscovery(Constants.NETWORK_PARAMETERS);
-                    private PeerDiscovery dbPeerDiscovery = null;
+                    //private PeerDiscovery dbPeerDiscovery = null;
                     //Random rand = new Random();
                     //int i = 0; //rand.nextInt(50);
                     //String channel = "#AuroraCoin" + String.format("%02d", i);
-                    String channel = "#"+CoinDefinition.coinName.toLowerCase() +"00";
-                    private final PeerDiscovery fallbackPeerDiscovery = new IrcDiscovery(channel);
+                    //String channel = "#"+CoinDefinition.coinName.toLowerCase() +"00";
+                    //private final PeerDiscovery fallbackPeerDiscovery = new IrcDiscovery(channel);
 
 					@Override
 					public InetSocketAddress[] getPeers(final long timeoutValue, final TimeUnit timeoutUnit) throws PeerDiscoveryException
 					{
                         try {
-                        	if (dbPeerDiscovery == null) 
+                        	/*if (dbPeerDiscovery == null)
         					{
 								log.info("Adding PeerDBDiscovery" );
 	                            dbPeerDiscovery = new LitecoinPeerDBDiscovery(Constants.NETWORK_PARAMETERS,
 	                                    getFileStreamPath(CoinDefinition.coinName.toLowerCase()+".peerdb"), peerGroup);
-        					}
+        					}*/
                         } catch(IllegalStateException e) {
-                        	dbPeerDiscovery = null;
+                        	//dbPeerDiscovery = null;
                             // This can happen in the guts of bitcoinj
                             log.info("IllegalStateException in bitcoinj: " + e.getMessage());
                         }
@@ -449,18 +447,18 @@ public class BlockchainServiceImpl extends android.app.Service implements Blockc
 							peers.addAll(Arrays.asList(normalPeerDiscovery.getPeers(timeoutValue, timeoutUnit)));
 							//log.info("Peer count "+ peers.size());
 							//log.info("Adding dbdiscovery peers ");
-                            if(dbPeerDiscovery != null)
-                                peers.addAll(Arrays.asList(dbPeerDiscovery.getPeers(1, TimeUnit.SECONDS)));
+                            //if(dbPeerDiscovery != null)
+                             //   peers.addAll(Arrays.asList(dbPeerDiscovery.getPeers(1, TimeUnit.SECONDS)));
 							//log.info("Peer count "+ peers.size());
                             if (peers.size() < 6 && CoinDefinition.supportsIrcDiscovery())
                             {
     							//log.info("Adding ircdiscovery peers ");
-                                try {
-                                	if (fallbackPeerDiscovery != null)
-                                		peers.addAll(Arrays.asList(fallbackPeerDiscovery.getPeers(timeoutValue, timeoutUnit)));
-                                } catch (PeerDiscoveryException e) {
-                                    log.info(this.getClass().toString(), "Failed to discover IRC peers: " + e.getMessage());
-                                }
+                                //try {
+                               // 	if (fallbackPeerDiscovery != null)
+                                //		peers.addAll(Arrays.asList(fallbackPeerDiscovery.getPeers(timeoutValue, timeoutUnit)));
+                                //} catch (PeerDiscoveryException e) {
+                                   // log.info(this.getClass().toString(), "Failed to discover IRC peers: " + e.getMessage());
+                                //}
     							//log.info("Peer count "+ peers.size());
                             }
                         }
@@ -477,10 +475,10 @@ public class BlockchainServiceImpl extends android.app.Service implements Blockc
 					public void shutdown()
 					{
 						normalPeerDiscovery.shutdown();
-                        if(dbPeerDiscovery != null)
-                            dbPeerDiscovery.shutdown();
-                        if(fallbackPeerDiscovery != null)
-                            fallbackPeerDiscovery.shutdown();
+                        //if(dbPeerDiscovery != null)
+//                            dbPeerDiscovery.shutdown();
+  //                      if(fallbackPeerDiscovery != null)
+    //                        fallbackPeerDiscovery.shutdown();
 					}
 				});
 

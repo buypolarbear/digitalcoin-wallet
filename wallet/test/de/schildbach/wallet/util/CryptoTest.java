@@ -1,5 +1,5 @@
 /*
- * Copyright 2014 the original author or authors.
+ * Copyright 2014-2015 the original author or authors.
  *
  * This program is free software: you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
@@ -27,9 +27,9 @@ import java.io.ByteArrayOutputStream;
 import java.io.IOException;
 import java.io.InputStreamReader;
 
+import org.bitcoinj.store.WalletProtobufSerializer;
 import org.junit.Test;
 
-import com.google.bitcoin.store.WalletProtobufSerializer;
 import com.google.common.base.Charsets;
 
 /**

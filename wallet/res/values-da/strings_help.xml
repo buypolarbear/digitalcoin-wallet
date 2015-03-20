@@ -1,20 +1,14 @@
 <?xml version='1.0' encoding='UTF-8'?>
 <resources>
-  <string name="help_wallet">\n<![CDATA[
+  <string name="help_wallet">
+<![CDATA[
 		<p>
-			Den øverste venstre del af skærmen viser din valgte digitalcoin-adresse, som andre har brug for at vide for at sende
-			dig digitalcoins.
-			Berør for at ændre adresse.
+			Den øverste venstre del af skærmen viser din saldo i digitalcoin og én valgt national valuta.
+			Berør for at gå til listen over nationale valutaer og berør en af disse valutaer for at sætte den som standard.
 		</p>
 		<p>
 			QR-koden til højre indeholder din digitalcoin-adresse og kan scannes af en anden person.
 			Berør QR-koden for at få en større version af den.
-		</p>
-		<p>
-			I midten af skærmen vises din saldo.
-			Din tegnebogs saldo vises også i en valgt lokal valutaenhed.
-			Berør saldoen for at få vist en liste over alle lokale valutaenheder, og berør en af valutaerne for at vælge den
-			som standard.
 		</p>
 		<p>
 			Bunden af skærmen indeholder din transaktionsliste, som i begyndelsen er tom.
@@ -23,11 +17,13 @@
 			Swipe venstre eller højre for at anvende filtre på listen.
 		</p>
 		<p>
-			Du kan sende eller forespørge mønter ved at berøre knapperne i action-bjælken.
+			Du kan sende eller anmode om digitalcoin ved at berøre knapperne i handlingsbjælken.
 			Flere indstillinger kan findes i menuen Opsætning.
 		</p>
-	]]>\n\t</string>
-  <string name="help_request_coins">\n<![CDATA[
+	]]>
+	</string>
+  <string name="help_request_coins">
+<![CDATA[
 		<p>
 			Ved at bruge denne dialog kan du forespørge mønter fra en anden person (som allerede skal have installeret digitalcoin Wallet).
 		</p>
@@ -43,8 +39,10 @@
 			Den anden person vil præsenteres for en dialog for afsendelse af mønter med alle felter forudfyldt.
 			Hvis hun accepterer, er alt hun behøver at gøre, at sende betalingen.
 		</p>
-	]]>\n\t</string>
-  <string name="help_send_coins">\n<![CDATA[
+	]]>
+	</string>
+  <string name="help_send_coins">
+<![CDATA[
 		<p>
 			Du har startet processen for at sende mønter.
 			Du kom hertil enten via hovedsskærmen eller ved at klikke på en digitalcoin-URL i din molbilbrowser.
@@ -71,8 +69,10 @@
 			Betalinger kan ikke fortrydes!
 			Tjek altid modtageradressen.
 		</p>
-	]]>\n\t</string>
-  <string name="help_safety">\n<![CDATA[
+	]]>
+	</string>
+  <string name="help_safety">
+<![CDATA[
 		<p>
 			<b>Vigtige bemærkninger om sikkerhed:</b>
 		</p>
@@ -103,5 +103,6 @@
 			Hold risikoen lav!
 			<b>Brug kun med små beløb</b> til daglig brug.
 		</p>
-	]]>\n\t</string>
+	]]>
+	</string>
 </resources>

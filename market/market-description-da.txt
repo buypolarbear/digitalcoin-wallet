@@ -1,8 +1,4 @@
-<<<<<<< HEAD
-Hav altid dine digitalcoins med dig i din lomme! Du betaler ved hurtigt at scanne en QR-kode. Som handlende kan du modtage betalinger pålideligt og øjeblikkeligt. digitalcoin Wallet er den første mobile digitalcoin-app, og muligvis også den mest sikre!
-=======
 <b>Hav altid dine digitalcoins med dig i din lomme!</b> Du betaler ved hurtigt at scanne en QR-kode. Som handlende kan du modtage betalinger pålideligt og øjeblikkeligt. digitalcoin Wallet er den første mobile digitalcoin-app, og muligvis også den mest sikre!
->>>>>>> upstream/master
 
 
 <b>FUNKTIONER</b>
@@ -14,15 +10,6 @@ Hav altid dine digitalcoins med dig i din lomme! Du betaler ved hurtigt at scann
 • Adressebog til ofte brugte digitalcoin-adresser.
 • Når du er offline, kan du stadig betale via Bluetooth.
 • Systemnotifikation for modtagne mønter.
-<<<<<<< HEAD
-• App-widget for digitalcoin-saldo.
-
-Du kan finde mere om digitalcoin på
-http://digitalcoin.co
-
-Hvis du vil bidrage til digitalcoin Wallet, kan projektet findes på
-https://github.com/HashEngineering/digitalcoin-wallet
-=======
 • Rydning af papirtegnebøger (fx de der bruges til kold opbevaring).
 • App-widget for digitalcoin-saldo.
 
@@ -34,7 +21,6 @@ https://www.gnu.org/licenses/gpl-3.0.en.html
 
 Vores kildekode er tilgængelig på GitHub:
 https://github.com/HashEngineering/digitalcoin-wallet
->>>>>>> upstream/master
 
 Alle oversættelser håndteres via Transifex:
 https://www.transifex.com/projects/p/bitcoin-wallet/

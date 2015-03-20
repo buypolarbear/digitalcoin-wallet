@@ -1,4 +1,4 @@
-/**
+/*
  * Copyright 2011 Google Inc.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
@@ -21,7 +21,9 @@ import javax.annotation.Nonnull;
 import com.google.common.base.Charsets;
 
 /**
- * Base43, derived from bitcoinj Base58
+ * Base43, derived from bitcoinj Base58. It's meant to be used for efficiently stuffing binary data into QR codes. The
+ * alphabet is picked to match the 'Alphanumeric' input mode of QR codes as closely as possible, but at the same time be
+ * allowed in URIs.
  * 
  * @author Andreas Schildbach
  */

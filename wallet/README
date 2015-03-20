@@ -9,7 +9,7 @@ storage:
 	Testnet: /data/data/de.schildbach.wallet_test/files/wallet-protobuf-testnet (MODE_WORLD_READABLE | MODE_WORLD_WRITEABLE)
 
 The wallet file format is not compatible to wallet.dat (Satoshi client). Rather, it uses a custom protobuf format
-which should be compatible between clients using digitalcoinj.
+which should be compatible between clients using Digitalcoinj.
 
 Certain actions cause automatic rolling backups of your wallet to app-private storage:
 
@@ -23,9 +23,8 @@ Your wallet can be manually backed up to and restored from external storage:
 
 	Testnet: /sdcard/Download/digitalcoin-wallet-backup-testnet-<yyyy-MM-dd>
 
-The manual backup files are encrypted using your chosen backup password. You can use OpenSSL to decrypt:
-
-	openssl enc -d -aes-256-cbc -a -in <filename>
+If you want to recover coins from manual backups and for whatever reason you cannot use the app
+itself to restore from the backup, see the separate README.recover guide.
 
 
 DEBUGGING
@@ -49,27 +48,28 @@ is world readable/writeable. The goal is to be able to debug easily.
 
 You can probably skip some steps, especially if you built Android apps before.
 
-You'll need git, a Java SDK 6 (or later) and Maven 3.0.4 for this. I'll assume Ubuntu Linux for
-the package installs.
+You'll need git, a Java SDK 6 (or later) and Maven 3.0.4 (or later) for this. I'll assume Ubuntu Linux
+for the package installs.
 
 	# first time only
-	sudo apt-get install git maven openjdk-6-jdk
+	sudo apt-get install git maven openjdk-6-jdk libstdc++6:i386
 
-If you want to use Maven 3.1.0 or later, you need edit pom.xml to use android-maven-plugin version
-3.8.2 or later.
-
-Get the Android SDK Tools from
+Get the Android SDK (Tools only) from
 
 	http://developer.android.com/sdk/
 
-and unpack it to your workspace directory. Switch to that Android SDK directory, and use
+and unpack it to your workspace directory. Point your ANDROID_HOME variable to that Android SDK directory
+and switch to it. Use
 
-	# first time only
-	tools/android update sdk --no-ui --force --filter platform,platform-tools
+	# make sure tools are at the newest version
+	tools/android update sdk --no-ui --force --filter tools
+
+	# fetch required android dependencies
+	tools/android update sdk --no-ui --force --filter build-tools-20.0.0,android-10,android-16,extra-android-m2repository
 
 to download the necessary API level.
 
-Finally, you can build digitalcoin Wallet and sign it with your development key. Again in your workspace,
+Finally, you can build Digitalcoin Wallet and sign it with your development key. Again in your workspace,
 use
 
 	# first time only
@@ -78,7 +78,7 @@ use
 	# each time
 	cd digitalcoin-wallet
 	git pull
-	mvn clean install -Dandroid.sdk.path=<path to your android sdk>
+	mvn clean install
 
 To upload the app to your Android device, use
 
@@ -108,17 +108,12 @@ separate 'prod' branch that gets rebased against master with each released versi
 
 SETTING UP FOR DEVELOPMENT
 
-Make sure you've got Eclipse Kepler with ADT 22 installed.
+Make sure you've got Eclipse Luna with ADT 23 installed.
 
 Use Git to check out the project and an Android library dependency to your workspace:
 
 	# clone digitalcoin Wallet project
 	git clone -b master https://github.com/HashEngineering/digitalcoin-wallet.git digitalcoin-wallet
-
-	# clone ActionBarSherlock library project
-	git clone https://github.com/JakeWharton/ActionBarSherlock.git action-bar-sherlock
-	cd action-bar-sherlock
-	git checkout 4.1.0
 
 Use the maven-eclipse-plugin to create Eclipse project files:
 
@@ -165,7 +160,7 @@ corrected manually.
 
 NFC (Near field communication)
 
-digitalcoin Wallet supports reading digitalcoin requests via NFC, either from a passive NFC tag or from
+Digitalcoin Wallet supports reading digitalcoin requests via NFC, either from a passive NFC tag or from
 another NFC capable Android device that is requesting coins.
 
 For this to work, just enable NFC in your phone and hold your phone to the tag or device (with
@@ -179,26 +174,26 @@ Instructions for preparing an NFC tag with your address:
 
 - Some tags have less than 50 bytes capacity, those won't work. 1 KB tags recommended.
 
-- The tag needs to contain a digitalcoin URI. You can construct one with the "Request coins" dialog,
+- The tag needs to contain a Digitalcoin URI. You can construct one with the "Request coins" dialog,
   then share with messaging or email. You can also construct the URI manually. Example for Mainnet:
   digitalcoin:1G2Y2jP5YFZ5RGk2PXaeWwbeA5y1ZtFhoL
 
 - The type of the message needs to be URI or URL (not Text).
 
 - If you put your tag at a public place, don't forget to enable write protect. Otherwise, someone
-  could overwrite the tag with his own digitalcoin address.
+  could overwrite the tag with his own Digitalcoin address.
 
 
-digitalcoinJ
+DigitalcoinJ
 
-digitalcoin Wallet uses digitalcoinj for digitalcoin specific logic:
+Digitalcoin Wallet uses Digitalcoinj for digitalcoin specific logic:
 
-	https://bitcoinj.github.io/
+	https://github.com/HashEngineering/digitalcoinj/
 
 
 EXCHANGE RATES
 
-digitalcoin Wallet reads this feed from "BitcoinAverage" for getting exchange rates:
+Digitalcoin Wallet reads this feed from "BitcoinAverage" for getting exchange rates:
 
 	https://api.bitcoinaverage.com/custom/abw
 

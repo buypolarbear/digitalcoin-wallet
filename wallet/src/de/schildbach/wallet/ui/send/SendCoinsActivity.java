@@ -1,5 +1,5 @@
 /*
- * Copyright 2011-2014 the original author or authors.
+ * Copyright 2011-2015 the original author or authors.
  *
  * This program is free software: you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
@@ -19,13 +19,12 @@ package de.schildbach.wallet.ui.send;
 
 import javax.annotation.Nonnull;
 
+import android.app.ActionBar;
 import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
-
-import com.actionbarsherlock.app.ActionBar;
-import com.actionbarsherlock.view.Menu;
-import com.actionbarsherlock.view.MenuItem;
+import android.view.Menu;
+import android.view.MenuItem;
 import de.schildbach.wallet.data.PaymentIntent;
 import de.schildbach.wallet.ui.AbstractBindServiceActivity;
 import de.schildbach.wallet.ui.HelpDialogFragment;
@@ -53,15 +52,12 @@ public final class SendCoinsActivity extends AbstractBindServiceActivity
 		setContentView(R.layout.send_coins_content);
 
 		getWalletApplication().startBlockchainService(false);
-
-		final ActionBar actionBar = getSupportActionBar();
-		actionBar.setDisplayHomeAsUpEnabled(true);
 	}
 
 	@Override
 	public boolean onCreateOptionsMenu(final Menu menu)
 	{
-		getSupportMenuInflater().inflate(R.menu.send_coins_activity_options, menu);
+		getMenuInflater().inflate(R.menu.send_coins_activity_options, menu);
 
 		return super.onCreateOptionsMenu(menu);
 	}
@@ -76,7 +72,7 @@ public final class SendCoinsActivity extends AbstractBindServiceActivity
 				return true;
 
 			case R.id.send_coins_options_help:
-				HelpDialogFragment.page(getSupportFragmentManager(), R.string.help_send_coins);
+				HelpDialogFragment.page(getFragmentManager(), R.string.help_send_coins);
 				return true;
 		}
 

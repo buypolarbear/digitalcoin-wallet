@@ -1,8 +1,4 @@
-<<<<<<< HEAD
-Hab deine digitalcoins immer dabei, in deiner Hosentasche! Du zahlst, indem du rasch einen QR-Code scannst. Als Händler empfängst du Zahlungen zuverlässig und sofort. digitalcoin Wallet ist die erste mobile digitalcoin app, und wohl auch die sicherste!
-=======
 <b>Hab deine digitalcoins immer dabei, in deiner Hosentasche!</b> Du zahlst, indem du rasch einen QR-Code scannst. Als Händler empfängst du Zahlungen zuverlässig und sofort. digitalcoin Wallet ist die erste mobile digitalcoin app, und wohl auch die sicherste!
->>>>>>> upstream/master
 
 
 <b>FEATURES</b>
@@ -14,15 +10,6 @@ Hab deine digitalcoins immer dabei, in deiner Hosentasche! Du zahlst, indem du r
 • Adressbuch für regelmäßig genutzte Empfänger.
 • Wenn du offline bist, kannst du trotzdem über Bluetooth zahlen.
 • System-Benachrichtigung für den Empfang von Zahlungen.
-<<<<<<< HEAD
-• App-Widget zeigt digitalcoin-Guthaben an.
-
-Weitere Informationen zu digitalcoin findest Du unter
-http://digitalcoin.co
-
-Wenn Du zu digitalcoin Wallet beitragen willst, das Projekt befindet sich auf
-https://github.com/HashEngineering/digitalcoin-wallet
-=======
 • Entleeren von Paper-Wallets (die z.B. für Cold-Storage genutzt wurden).
 • App-Widget zeigt digitalcoin-Guthaben an.
 
@@ -34,7 +21,6 @@ https://www.gnu.org/licenses/gpl-3.0.de.html
 
 Unser Source Code ist auf GitHub verfügbar:
 https://github.com/HashEngineering/digitalcoin-wallet
->>>>>>> upstream/master
 
 Alle Übersetzungen werden auf Transifex organisiert:
 https://www.transifex.com/projects/p/bitcoin-wallet/

@@ -17,49 +17,17 @@
 
 package de.schildbach.wallet.ui;
 
-import java.util.ArrayList;
-import java.util.Collection;
-import java.util.HashSet;
-import java.util.List;
-import java.util.Map;
-import java.util.Set;
-import java.util.concurrent.RejectedExecutionException;
-
-import javax.annotation.Nonnull;
-
-import org.bitcoinj.core.Block;
-import org.bitcoinj.core.Sha256Hash;
-import org.bitcoinj.core.StoredBlock;
-import org.bitcoinj.core.Transaction;
-import org.bitcoinj.core.Wallet;
-import org.digitalcoinj.DigitalcoinParams;
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
-
 import android.app.Activity;
 import android.app.ListFragment;
 import android.app.LoaderManager;
 import android.app.LoaderManager.LoaderCallbacks;
-import android.content.AsyncTaskLoader;
-import android.content.BroadcastReceiver;
-import android.content.ComponentName;
-import android.content.Context;
-import android.content.Intent;
-import android.content.IntentFilter;
-import android.content.Loader;
-import android.content.ServiceConnection;
+import android.content.*;
 import android.net.Uri;
 import android.os.Bundle;
 import android.os.IBinder;
 import android.support.v4.content.LocalBroadcastManager;
 import android.text.format.DateUtils;
-import android.view.ActionMode;
-import android.view.LayoutInflater;
-import android.view.Menu;
-import android.view.MenuInflater;
-import android.view.MenuItem;
-import android.view.View;
-import android.view.ViewGroup;
+import android.view.*;
 import android.widget.BaseAdapter;
 import android.widget.ListView;
 import android.widget.TextView;
@@ -71,6 +39,8 @@ import de.schildbach.wallet.service.BlockchainService;
 import de.schildbach.wallet.service.BlockchainServiceImpl;
 import de.schildbach.wallet.util.WalletUtils;
 import hashengineering.digitalcoin.wallet.R;
+import org.bitcoinj.core.*;
+import org.digitalcoinj.DigitalcoinParams;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
@@ -302,7 +272,7 @@ public final class BlockListFragment extends ListFragment
 		{
 			final ViewGroup row;
 			if (convertView == null)
-				row = (ViewGroup) inflater.inflate(R.layout.block_row, null);
+				row = (ViewGroup) inflater.inflate(R.layout.block_row_extra, null);
 			else
 				row = (ViewGroup) convertView;
 

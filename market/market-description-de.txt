@@ -28,9 +28,7 @@ https://www.transifex.com/projects/p/bitcoin-wallet/
 
 <b>EMPFEHLUNGEN</b>
 
-• Viele mobile Wallets basieren auf digitalcoin Wallet. Beispiele: blockchain.info, Hive and KnC.
 • Von http://digitalcoin.co empfohlenes mobiles Wallet.
-• Von BitPay empfohlen.
 
 
 <i>Nutzung auf eigene Gefahr!</i>

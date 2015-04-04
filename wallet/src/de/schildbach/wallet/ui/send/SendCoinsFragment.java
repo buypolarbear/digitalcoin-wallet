@@ -104,7 +104,6 @@ public final class SendCoinsFragment extends Fragment
 	private TextView receivingStaticLabelView;
 	private CurrencyCalculatorLink amountCalculatorLink;
 	private CheckBox directPaymentEnableView;
-    private TextView txFeeView;
 
 	private TextView hintView;
 	private TextView directPaymentMessageView;
@@ -560,9 +559,7 @@ public final class SendCoinsFragment extends Fragment
 		amountCalculatorLink = new CurrencyCalculatorLink(btcAmountView, localAmountView);
 		amountCalculatorLink.setExchangeDirection(config.getLastExchangeDirection());
 
-        txFeeView = (TextView)view.findViewById(R.id.send_coins_transaction_fee);
-
-		directPaymentEnableView = (CheckBox) view.findViewById(R.id.send_coins_direct_payment_enable);
+        directPaymentEnableView = (CheckBox) view.findViewById(R.id.send_coins_direct_payment_enable);
 		directPaymentEnableView.setOnCheckedChangeListener(new OnCheckedChangeListener()
 		{
 			@Override

@@ -21,8 +21,6 @@ import static com.google.common.base.Preconditions.checkArgument;
 
 import java.util.Arrays;
 
-import javax.annotation.CheckForNull;
-import javax.annotation.Nonnull;
 import javax.annotation.Nullable;
 
 import org.bitcoinj.core.Address;
@@ -153,31 +151,31 @@ public final class PaymentIntent implements Parcelable
 		}
 	}
 
-	@CheckForNull
+	@Nullable
 	public final Standard standard;
 
-	@CheckForNull
+	@Nullable
 	public final String payeeName;
 
-	@CheckForNull
+	@Nullable
 	public final String payeeVerifiedBy;
 
-	@CheckForNull
+	@Nullable
 	public final Output[] outputs;
 
-	@CheckForNull
+	@Nullable
 	public final String memo;
 
-	@CheckForNull
+	@Nullable
 	public final String paymentUrl;
 
-	@CheckForNull
+	@Nullable
 	public final byte[] payeeData;
 
-	@CheckForNull
+	@Nullable
 	public final String paymentRequestUrl;
 
-	@CheckForNull
+	@Nullable
 	public final byte[] paymentRequestHash;
 
 	private static final Logger log = LoggerFactory.getLogger(PaymentIntent.class);
@@ -197,7 +195,7 @@ public final class PaymentIntent implements Parcelable
 		this.paymentRequestHash = paymentRequestHash;
 	}
 
-	private PaymentIntent(@Nonnull final Address address, @Nullable final String addressLabel)
+	private PaymentIntent(final Address address, @Nullable final String addressLabel)
 	{
 		this(null, null, null, buildSimplePayTo(Coin.ZERO, address), addressLabel, null, null, null, null);
 	}
@@ -207,18 +205,18 @@ public final class PaymentIntent implements Parcelable
 		return new PaymentIntent(null, null, null, null, null, null, null, null, null);
 	}
 
-	public static PaymentIntent fromAddress(@Nonnull final Address address, @Nullable final String addressLabel)
+	public static PaymentIntent fromAddress(final Address address, @Nullable final String addressLabel)
 	{
 		return new PaymentIntent(address, addressLabel);
 	}
 
-	public static PaymentIntent fromAddress(@Nonnull final String address, @Nullable final String addressLabel) throws WrongNetworkException,
+	public static PaymentIntent fromAddress(final String address, @Nullable final String addressLabel) throws WrongNetworkException,
 			AddressFormatException
 	{
 		return new PaymentIntent(new Address(Constants.NETWORK_PARAMETERS, address), addressLabel);
 	}
 
-	public static PaymentIntent fromBitcoinUri(@Nonnull final BitcoinURI bitcoinUri)
+	public static PaymentIntent fromBitcoinUri(final BitcoinURI bitcoinUri)
 	{
 		final Address address = bitcoinUri.getAddress();
 		final Output[] outputs = address != null ? buildSimplePayTo(bitcoinUri.getAmount(), address) : null;

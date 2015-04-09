@@ -3,19 +3,19 @@
 <b>FUNKCE</b>
 
 • Žádná registrace, žádná webová služba ani cloud není potřeba! Tato peněženka je de-centralizovaná a peer to peer.
-• Zobrazení digitalcoin částek v DGC, mDGC a µDGC.
+• Zobrazení Digitalcoin částek v DGC, mDGC a µDGC.
 • Přepočet z a do národních měn.
-• Odesílání a přijímání plateb přes NFC, QR kódy nebo digitalcoin URL.
-• Adresář pro často používané digitalcoin adresy.
+• Odesílání a přijímání plateb přes NFC, QR kódy nebo Digitalcoin URL.
+• Adresář pro často používané Digitalcoin adresy.
 • Pokud jste offline, stále můžete platit přes Bluetooth.
 • Systémové notifikace při přijaté platbě
 • Načítání papírových peněženek (např. ty co se používají u cold storage).
-• Widget pro zborazení digitalcoin bilance.
+• Widget pro zborazení Digitalcoin bilance.
 
 
 <b>PŘISPĚJTE</b>
 
-digitalcoin Wallet je <b>open source</b> a <b>svobodný software</b>. Licence: GPLv3
+Digitalcoin Wallet je <b>open source</b> a <b>svobodný software</b>. Licence: GPLv3
 https://www.gnu.org/licenses/gpl-3.0.en.html
 
 Náš zdrojový kód je k dispozici na GitHubu:

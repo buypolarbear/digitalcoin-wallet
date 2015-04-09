@@ -1,4 +1,4 @@
-Havu viajn Bitmonojn ĉiam kun vi, en via poŝo! Vi povas pagi per rapide skanado de QR-kodo. Kiel komercisto, vi povas ricevi pagojn fidinde kaj tuj. digitalcoin Wallet estas unua movebla Bitmona aplikaĵo, kaj disputeble ankaŭ la plej sekura!
+Havu viajn Bitmonojn ĉiam kun vi, en via poŝo! Vi povas pagi per rapide skanado de QR-kodo. Kiel komercisto, vi povas ricevi pagojn fidinde kaj tuj. Digitalcoin Wallet estas unua movebla Bitmona aplikaĵo, kaj disputeble ankaŭ la plej sekura!
 
 TRAJTOJ:
 
@@ -14,7 +14,7 @@ TRAJTOJ:
 Vi povas trovi pli pri Bitmono ĉe
 http://digitalcoin.co
 
-Se vi volas kontribui al digitalcoin Wallet, la projekto lokas ĉe
+Se vi volas kontribui al Digitalcoin Wallet, la projekto lokas ĉe
 https://github.com/HashEngineering/digitalcoin-wallet
 
 Licenco: GPLv3

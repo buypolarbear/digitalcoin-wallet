@@ -17,6 +17,13 @@
 
 package de.schildbach.wallet.ui;
 
+
+import javax.annotation.Nullable;
+
+import org.bitcoinj.core.Coin;
+import org.bitcoinj.core.Wallet;
+import org.bitcoinj.utils.Fiat;
+
 import android.app.Activity;
 import android.app.Fragment;
 import android.app.LoaderManager;
@@ -40,11 +47,7 @@ import de.schildbach.wallet.WalletApplication;
 import de.schildbach.wallet.service.BlockchainState;
 import de.schildbach.wallet.service.BlockchainStateLoader;
 import hashengineering.digitalcoin.wallet.R;
-import org.bitcoinj.core.Coin;
-import org.bitcoinj.core.Wallet;
-import org.bitcoinj.utils.Fiat;
 
-import javax.annotation.CheckForNull;
 
 
 /**
@@ -67,11 +70,11 @@ public final class WalletBalanceFragment extends Fragment
 
 	private boolean showLocalBalance;
 
-	@CheckForNull
+	@Nullable
 	private Coin balance = null;
-	@CheckForNull
+	@Nullable
 	private ExchangeRate exchangeRate = null;
-	@CheckForNull
+	@Nullable
 	private BlockchainState blockchainState = null;
 
 	private static final int ID_BALANCE_LOADER = 0;

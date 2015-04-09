@@ -17,6 +17,28 @@
 
 package de.schildbach.wallet.ui;
 
+import java.io.BufferedReader;
+import java.io.ByteArrayInputStream;
+import java.io.File;
+import java.io.FileInputStream;
+import java.io.IOException;
+import java.io.InputStream;
+import java.io.InputStreamReader;
+import java.net.SocketException;
+import java.net.SocketTimeoutException;
+import java.net.UnknownHostException;
+import java.util.Collections;
+import java.util.Comparator;
+import java.util.LinkedList;
+import java.util.List;
+
+import org.bitcoinj.core.AddressFormatException;
+import org.bitcoinj.core.Transaction;
+import org.bitcoinj.core.VerificationException;
+import org.bitcoinj.core.VersionedChecksummedBytes;
+import org.bitcoinj.core.Wallet;
+import org.bitcoinj.core.Wallet.BalanceType;
+
 import android.app.Activity;
 import android.app.AlertDialog;
 import android.app.Dialog;
@@ -56,15 +78,7 @@ import de.schildbach.wallet.ui.send.SendCoinsActivity;
 import de.schildbach.wallet.ui.send.SweepWalletActivity;
 import de.schildbach.wallet.util.*;
 import hashengineering.digitalcoin.wallet.R;
-import org.bitcoinj.core.*;
-import org.bitcoinj.core.Wallet.BalanceType;
 
-import javax.annotation.Nonnull;
-import java.io.*;
-import java.util.Collections;
-import java.util.Comparator;
-import java.util.LinkedList;
-import java.util.List;
 
 /**
  * @author Andreas Schildbach
@@ -137,7 +151,7 @@ public final class WalletActivity extends AbstractWalletActivity
 		handleIntent(intent);
 	}
 
-	private void handleIntent(@Nonnull final Intent intent)
+	private void handleIntent(final Intent intent)
 	{
 		final String action = intent.getAction();
 
@@ -174,13 +188,13 @@ public final class WalletActivity extends AbstractWalletActivity
 			new StringInputParser(input)
 			{
 				@Override
-				protected void handlePaymentIntent(@Nonnull final PaymentIntent paymentIntent)
+				protected void handlePaymentIntent(final PaymentIntent paymentIntent)
 				{
 					SendCoinsActivity.start(WalletActivity.this, paymentIntent);
 				}
 
 				@Override
-				protected void handlePrivateKey(@Nonnull final VersionedChecksummedBytes key)
+				protected void handlePrivateKey(final VersionedChecksummedBytes key)
 				{
 					SweepWalletActivity.start(WalletActivity.this, key);
 				}
@@ -724,7 +738,7 @@ public final class WalletActivity extends AbstractWalletActivity
 		return dialog.create();
 	}
 
-	private void restoreWalletFromEncrypted(@Nonnull final File file, @Nonnull final String password)
+	private void restoreWalletFromEncrypted(final File file, final String password)
 	{
 		try
 		{
@@ -759,7 +773,7 @@ public final class WalletActivity extends AbstractWalletActivity
 		}
 	}
 
-	private void restoreWalletFromProtobuf(@Nonnull final File file)
+	private void restoreWalletFromProtobuf(final File file)
 	{
 		FileInputStream is = null;
 		try
@@ -802,7 +816,7 @@ public final class WalletActivity extends AbstractWalletActivity
 		}
 	}
 
-	private void restorePrivateKeysFromBase58(@Nonnull final File file)
+	private void restorePrivateKeysFromBase58(final File file)
 	{
 		FileInputStream is = null;
 		try

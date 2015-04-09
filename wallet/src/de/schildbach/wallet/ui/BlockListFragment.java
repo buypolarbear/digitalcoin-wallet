@@ -17,6 +17,21 @@
 
 package de.schildbach.wallet.ui;
 
+import java.util.ArrayList;
+import java.util.Collection;
+import java.util.HashSet;
+import java.util.List;
+import java.util.Map;
+import java.util.Set;
+import java.util.concurrent.RejectedExecutionException;
+
+import org.bitcoinj.core.Block;
+import org.bitcoinj.core.Sha256Hash;
+import org.bitcoinj.core.StoredBlock;
+import org.bitcoinj.core.Transaction;
+import org.bitcoinj.core.Wallet;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import android.app.Activity;
 import android.app.ListFragment;
 import android.app.LoaderManager;
@@ -39,14 +54,7 @@ import de.schildbach.wallet.service.BlockchainService;
 import de.schildbach.wallet.service.BlockchainServiceImpl;
 import de.schildbach.wallet.util.WalletUtils;
 import hashengineering.digitalcoin.wallet.R;
-import org.bitcoinj.core.*;
 import org.digitalcoinj.DigitalcoinParams;
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
-
-import javax.annotation.Nonnull;
-import java.util.*;
-import java.util.concurrent.RejectedExecutionException;
 
 /**
  * @author Andreas Schildbach
@@ -235,7 +243,7 @@ public final class BlockListFragment extends ListFragment
 			adapter.notifyDataSetChanged();
 		}
 
-		public void replace(@Nonnull final Collection<StoredBlock> blocks)
+		public void replace(final Collection<StoredBlock> blocks)
 		{
 			this.blocks.clear();
 			this.blocks.addAll(blocks);

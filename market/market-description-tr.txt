@@ -1,22 +1,22 @@
-<b>digitalcoin'leriniz daima cebinizde sizinle olsun!</b> Herhangi bir QR kodunu okuyarak çabuk ödeme yapabilirsiniz. Bir tüccar olarak ödemeleri güvenilir ve anında alabilirsiniz. digitalcoin Wallet ilk mobil digitalcoin uygulamasıdır ve muhtemelen en güvenli digitalcoin uygulamasıdır!
+<b>digitalcoin'leriniz daima cebinizde sizinle olsun!</b> Herhangi bir QR kodunu okuyarak çabuk ödeme yapabilirsiniz. Bir tüccar olarak ödemeleri güvenilir ve anında alabilirsiniz. Digitalcoin Wallet ilk mobil Digitalcoin uygulamasıdır ve muhtemelen en güvenli Digitalcoin uygulamasıdır!
 
 
 <b>ÖZELLİKLER</b>
 
 • Hiçbir oturuma, web ya da bulut hizmetine gerek yoktur. Bu cüzdan merkezsiz ve eşten eşedir.
-• digitalcoin meblağlarını DGC, mDGC ve µDGC olarak göster.
+• Digitalcoin meblağlarını DGC, mDGC ve µDGC olarak göster.
 • Ulusal para birimlerine ve bu para birimlerinden dönüştürme.
-• QR kodları, digitalcoin bağlantıları ve yakın alan iletişimi ile digitalcoin alımı ve gönderilmesi.
-• Sık kullanılan digitalcoin adresleri için adres defteri içerir.
+• QR kodları, Digitalcoin bağlantıları ve yakın alan iletişimi ile Digitalcoin alımı ve gönderilmesi.
+• Sık kullanılan Digitalcoin adresleri için adres defteri içerir.
 • Çevrimdışı olduğunuzda Bluetooth vasıtasıyla ödemeler.
 • Alınan bitcoin'ler için sistem bildirimleri.
 • Kağıt cüzdanların taranması (mesela soğuk depolama için kullanılanlar).
-• digitalcoin bakiyesini görüntüleyen widget.
+• Digitalcoin bakiyesini görüntüleyen widget.
 
 
 <b>İŞTİRAK EDİN</b>
 
-digitalcoin Wallet <b>açık kaynak</b> ve <b>özgür yazılımdır</b>. Lisans: GPLv3
+Digitalcoin Wallet <b>açık kaynak</b> ve <b>özgür yazılımdır</b>. Lisans: GPLv3
 https://www.gnu.org/licenses/gpl-3.0.en.html
 
 Kaynak kodumuz GitHub'da mevcuttur:
@@ -28,7 +28,7 @@ https://www.transifex.com/projects/p/bitcoin-wallet/
 
 <b>REFERANSLAR</b>
 
-• Birçok mobil cüzdan kodları için digitalcoin Wallet'i temel alırlar. Mesela blockchain.info, Hive ve KnC.
+• Birçok mobil cüzdan kodları için Digitalcoin Wallet'i temel alırlar. Mesela blockchain.info, Hive ve KnC.
 • http://digitalcoin.co tarafından tavsiye edilen mobil cüzdan.
 • BitPay tarafından tavsiye edilir.
 

@@ -26,12 +26,9 @@ import java.util.List;
 import java.util.Set;
 import java.util.concurrent.RejectedExecutionException;
 
-import javax.annotation.CheckForNull;
-import javax.annotation.Nonnull;
 import javax.annotation.Nullable;
 
 import org.bitcoinj.core.Address;
-import org.bitcoinj.core.Coin;
 import org.bitcoinj.core.ScriptException;
 import org.bitcoinj.core.Transaction;
 import org.bitcoinj.core.Transaction.Purpose;
@@ -101,7 +98,7 @@ public class TransactionsListFragment extends FancyListFragment implements Loade
 
 	private TransactionsListAdapter adapter;
 
-	@CheckForNull
+	@Nullable
 	private Direction direction;
 
 	private final Handler handler = new Handler();
@@ -205,12 +202,14 @@ public class TransactionsListFragment extends FancyListFragment implements Loade
 			handleTransactionClick(tx);
 	}
 
-	private void handleTransactionClick(@Nonnull final Transaction tx)
+	private void handleTransactionClick(final Transaction tx)
 	{
 		activity.startActionMode(new ActionMode.Callback()
 		{
-			private Address address;
-			private byte[] serializedTx;
+			private final boolean txSent = tx.getValue(wallet).signum() < 0;
+			private final Address txAddress = txSent ? WalletUtils.getToAddressOfSent(tx, wallet) : WalletUtils
+					.getWalletAddressOfReceived(tx, wallet);
+			private final byte[] txSerialized = tx.unsafeBitcoinSerialize();
 
 			private static final int SHOW_QR_THRESHOLD_BYTES = 2500;
 
@@ -235,32 +234,24 @@ public class TransactionsListFragment extends FancyListFragment implements Loade
 					mode.setTitle(time != null ? (DateUtils.isToday(time.getTime()) ? getString(R.string.time_today) : dateFormat.format(time))
 							+ ", " + timeFormat.format(time) : null);
 
-					final Coin value = tx.getValue(wallet);
-					final boolean sent = value.signum() < 0;
-
-					address = sent ? WalletUtils.getWalletAddressOfReceived(tx, wallet) : WalletUtils.getFirstFromAddress(tx);
-
 					final String label;
 					if (tx.isCoinBase())
 						label = getString(R.string.wallet_transactions_fragment_coinbase);
-					else if (address != null)
-						label = AddressBookProvider.resolveLabel(activity, address.toString());
+					else if (txAddress != null)
+						label = AddressBookProvider.resolveLabel(activity, txAddress.toString());
 					else
 						label = "?";
 
-					final String prefix = getString(sent ? R.string.symbol_to : R.string.symbol_from) + " ";
+					final String prefix = getString(txSent ? R.string.symbol_to : R.string.symbol_from) + " ";
 
 					if (tx.getPurpose() != Purpose.KEY_ROTATION)
-						mode.setSubtitle(label != null ? prefix + label : WalletUtils.formatAddress(prefix, address,
+						mode.setSubtitle(label != null ? prefix + label : WalletUtils.formatAddress(prefix, txAddress,
 								Constants.ADDRESS_FORMAT_GROUP_SIZE, Constants.ADDRESS_FORMAT_LINE_SIZE));
 					else
 						mode.setSubtitle(null);
 
-					menu.findItem(R.id.wallet_transactions_context_edit_address).setVisible(address != null);
-
-					serializedTx = tx.unsafeBitcoinSerialize();
-
-					menu.findItem(R.id.wallet_transactions_context_show_qr).setVisible(serializedTx.length < SHOW_QR_THRESHOLD_BYTES);
+					menu.findItem(R.id.wallet_transactions_context_edit_address).setVisible(txAddress != null);
+					menu.findItem(R.id.wallet_transactions_context_show_qr).setVisible(txSerialized.length < SHOW_QR_THRESHOLD_BYTES);
 
 					return true;
 				}
@@ -303,15 +294,15 @@ public class TransactionsListFragment extends FancyListFragment implements Loade
 			{
 			}
 
-			private void handleEditAddress(@Nonnull final Transaction tx)
+			private void handleEditAddress(final Transaction tx)
 			{
-				EditAddressBookEntryFragment.edit(getFragmentManager(), address.toString());
+				EditAddressBookEntryFragment.edit(getFragmentManager(), txAddress.toString());
 			}
 
 			private void handleShowQr()
 			{
 				final int size = getResources().getDimensionPixelSize(R.dimen.bitmap_dialog_qr_size);
-				final Bitmap qrCodeBitmap = Qr.bitmap(Qr.encodeCompressBinary(serializedTx), size);
+				final Bitmap qrCodeBitmap = Qr.bitmap(Qr.encodeCompressBinary(txSerialized), size);
 				BitmapFragment.show(getFragmentManager(), qrCodeBitmap);
 			}
 		});
@@ -367,10 +358,10 @@ public class TransactionsListFragment extends FancyListFragment implements Loade
 	{
 		private LocalBroadcastManager broadcastManager;
 		private final Wallet wallet;
-		@CheckForNull
+		@Nullable
 		private final Direction direction;
 
-		private TransactionsLoader(final Context context, @Nonnull final Wallet wallet, @Nullable final Direction direction)
+		private TransactionsLoader(final Context context, final Wallet wallet, @Nullable final Direction direction)
 		{
 			super(context);
 

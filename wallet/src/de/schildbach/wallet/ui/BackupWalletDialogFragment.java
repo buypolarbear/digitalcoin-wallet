@@ -27,8 +27,7 @@ import java.text.DateFormat;
 import java.util.Date;
 import java.util.TimeZone;
 
-import javax.annotation.CheckForNull;
-import javax.annotation.Nonnull;
+import javax.annotation.Nullable;
 
 import org.bitcoinj.core.Wallet;
 import org.bitcoinj.store.WalletProtobufSerializer;
@@ -80,7 +79,7 @@ public class BackupWalletDialogFragment extends DialogFragment
 	private WalletApplication application;
 	private Wallet wallet;
 
-	@CheckForNull
+	@Nullable
 	private AlertDialog dialog;
 
 	private EditText passwordView, passwordAgainView;
@@ -255,7 +254,7 @@ public class BackupWalletDialogFragment extends DialogFragment
 		positiveButton.setEnabled(hasPassword && hasPasswordAgain);
 	}
 
-	private void backupWallet(@Nonnull final String password)
+	private void backupWallet(final String password)
 	{
 		Constants.Files.EXTERNAL_WALLET_BACKUP_DIR.mkdirs();
 		final DateFormat dateFormat = Iso8601Format.newDateFormat();

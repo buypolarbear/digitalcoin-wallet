@@ -19,7 +19,7 @@ package de.schildbach.wallet.service;
 
 import java.util.List;
 
-import javax.annotation.CheckForNull;
+import javax.annotation.Nullable;
 
 import hashengineering.digitalcoin.wallet.R;
 import org.bitcoinj.core.Peer;
@@ -44,7 +44,7 @@ public interface BlockchainService
 
 	BlockchainState getBlockchainState();
 
-	@CheckForNull
+	@Nullable
 	List<Peer> getConnectedPeers();
 
 	List<StoredBlock> getRecentBlocks(int maxBlocks);

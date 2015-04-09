@@ -17,7 +17,24 @@
 
 package de.schildbach.wallet.ui;
 
-import android.app.*;
+import java.security.SecureRandom;
+
+import javax.annotation.Nullable;
+
+import org.bitcoinj.core.Wallet;
+import org.bitcoinj.crypto.KeyCrypter;
+import org.bitcoinj.crypto.KeyCrypterException;
+import org.bitcoinj.crypto.KeyCrypterScrypt;
+import org.bitcoinj.wallet.Protos;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
+import org.spongycastle.crypto.params.KeyParameter;
+
+import android.app.Activity;
+import android.app.AlertDialog;
+import android.app.Dialog;
+import android.app.DialogFragment;
+import android.app.FragmentManager;
 import android.content.DialogInterface;
 import android.content.DialogInterface.OnShowListener;
 import android.graphics.Typeface;
@@ -37,17 +54,6 @@ import android.widget.TextView;
 import com.google.protobuf.ByteString;
 import de.schildbach.wallet.WalletApplication;
 import hashengineering.digitalcoin.wallet.R;
-import org.bitcoinj.core.Wallet;
-import org.bitcoinj.crypto.KeyCrypter;
-import org.bitcoinj.crypto.KeyCrypterException;
-import org.bitcoinj.crypto.KeyCrypterScrypt;
-import org.bitcoinj.wallet.Protos;
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
-import org.spongycastle.crypto.params.KeyParameter;
-
-import javax.annotation.CheckForNull;
-import java.security.SecureRandom;
 
 /**
  * @author Andreas Schildbach
@@ -68,7 +74,7 @@ public class EncryptKeysDialogFragment extends DialogFragment
 	private WalletApplication application;
 	private Wallet wallet;
 
-	@CheckForNull
+	@Nullable
 	private AlertDialog dialog;
 
 	private View oldPasswordGroup;

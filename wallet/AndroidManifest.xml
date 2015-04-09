@@ -7,7 +7,6 @@
 	android:versionCode="3004204"
 	android:versionName="3.01.4204" >
 
-
 	<uses-sdk
 		android:minSdkVersion="15"
 		android:targetSdkVersion="16"

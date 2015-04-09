@@ -17,6 +17,29 @@
 
 package de.schildbach.wallet;
 
+import java.io.BufferedInputStream;
+import java.io.IOException;
+import java.io.InputStream;
+import java.io.InputStreamReader;
+import java.io.Reader;
+import java.net.HttpURLConnection;
+import java.net.MalformedURLException;
+import java.net.URL;
+import java.util.Currency;
+import java.util.Iterator;
+import java.util.Locale;
+import java.util.Map;
+import java.util.TreeMap;
+import java.util.zip.GZIPInputStream;
+
+import javax.annotation.Nullable;
+
+import org.bitcoinj.core.Coin;
+import org.bitcoinj.utils.Fiat;
+import org.json.JSONObject;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
+
 import android.content.ContentProvider;
 import android.content.ContentValues;
 import android.content.Context;
@@ -54,7 +77,7 @@ public class ExchangeRatesProvider extends ContentProvider
 {
 	public static class ExchangeRate
 	{
-		public ExchangeRate(@Nonnull final org.bitcoinj.utils.ExchangeRate rate, final String source)
+		public ExchangeRate(final org.bitcoinj.utils.ExchangeRate rate, final String source)
 		{
 			this.rate = rate;
 			this.source = source;
@@ -86,7 +109,7 @@ public class ExchangeRatesProvider extends ContentProvider
 	private Configuration config;
 	private String userAgent;
 
-	@CheckForNull
+	@Nullable
 	private Map<String, ExchangeRate> exchangeRates = null;
 	private long lastUpdated = 0;
 
@@ -135,7 +158,7 @@ public class ExchangeRatesProvider extends ContentProvider
 		return true;
 	}
 
-	public static Uri contentUri(@Nonnull final String packageName, final boolean offline)
+	public static Uri contentUri(final String packageName, final boolean offline)
 	{
 		final Uri.Builder uri = Uri.parse("content://" + packageName + '.' + "exchange_rates").buildUpon();
 		if (offline)
@@ -239,7 +262,7 @@ public class ExchangeRatesProvider extends ContentProvider
 		}
 	}
 
-	public static ExchangeRate getExchangeRate(@Nonnull final Cursor cursor)
+	public static ExchangeRate getExchangeRate(final Cursor cursor)
 	{
 		final String currencyCode = cursor.getString(cursor.getColumnIndexOrThrow(ExchangeRatesProvider.KEY_CURRENCY_CODE));
 		final Coin rateCoin = Coin.valueOf(cursor.getLong(cursor.getColumnIndexOrThrow(ExchangeRatesProvider.KEY_RATE_COIN)));

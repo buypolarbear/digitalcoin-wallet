@@ -4,19 +4,19 @@
 <b>OMINAISUUDET</b>
 
 • Ei vaadi rekisteröintiä, verkkopalveluja tai pilvitallennusta! Tämä lompakko on hajautettu ja suorayhteyksinen.
-• Mahdollisuus näyttää digitalcoin-varat määrissä DGC, mDGC ja µDGC.
+• Mahdollisuus näyttää Digitalcoin-varat määrissä DGC, mDGC ja µDGC.
 • Yksikkömuunnos valtioiden valuuttojen välillä.
-• digitalcoinien lähettäminen ja vastaanottaminen NFC, QR-koodien tai digitalcoin-URL-osotteiden avulla.
-• Osoitekirja säännöllisesti käytettyjä digitalcoin-osoitteita varten.
+• Digitalcoinien lähettäminen ja vastaanottaminen NFC, QR-koodien tai Digitalcoin-URL-osotteiden avulla.
+• Osoitekirja säännöllisesti käytettyjä Digitalcoin-osoitteita varten.
 • Kun et ole verkkoyhteyden ulottuvilla, voit silti maksaa Bluetoothin välityksellä.
-• Järjestelmän ilmoitus vastaanotetuille digitalcoineille.
+• Järjestelmän ilmoitus vastaanotetuille Digitalcoineille.
 • Paperisen lompakon pyyhkäisymahdollisuus (esim. näitä käytetään "kylmissä varastoissa").
-• Android-sovellus digitalcoin-varojen hallintaan.
+• Android-sovellus Digitalcoin-varojen hallintaan.
 
 
 <b>OSALLISTU</b>
 
-digitalcoin Wallet on <b>avointa lähdekoodia</b> ja <b>vapaa ohjelmisto</b>. Lisenssi: GPLv3
+Digitalcoin Wallet on <b>avointa lähdekoodia</b> ja <b>vapaa ohjelmisto</b>. Lisenssi: GPLv3
 https://www.gnu.org/licenses/gpl-3.0.en.html
 
 Lähdekoodi saatavilla GitHub:sta:

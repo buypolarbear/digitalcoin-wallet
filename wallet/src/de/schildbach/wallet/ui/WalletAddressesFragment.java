@@ -21,8 +21,6 @@ import java.util.Collections;
 import java.util.Comparator;
 import java.util.List;
 
-import javax.annotation.Nonnull;
-
 import org.bitcoinj.core.AbstractWalletEventListener;
 import org.bitcoinj.core.Address;
 import org.bitcoinj.core.ECKey;
@@ -213,19 +211,19 @@ public final class WalletAddressesFragment extends FancyListFragment
 				return getKey(position).toAddress(Constants.NETWORK_PARAMETERS);
 			}
 
-			private void handleEdit(@Nonnull final Address address)
+			private void handleEdit(final Address address)
 			{
 				EditAddressBookEntryFragment.edit(getFragmentManager(), address.toString());
 			}
 
-			private void handleShowQr(@Nonnull final Address address)
+			private void handleShowQr(final Address address)
 			{
 				final String uri = BitcoinURI.convertToBitcoinURI(address, null, null, null);
 				final int size = getResources().getDimensionPixelSize(R.dimen.bitmap_dialog_qr_size);
 				BitmapFragment.show(getFragmentManager(), Qr.bitmap(uri, size));
 			}
 
-			private void handleCopyToClipboard(@Nonnull final Address address)
+			private void handleCopyToClipboard(final Address address)
 			{
 				clipboardManager.setPrimaryClip(ClipData.newPlainText("Bitcoin address", address.toString()));
 				log.info("address copied to clipboard: {}", address.toString());
@@ -257,9 +255,10 @@ public final class WalletAddressesFragment extends FancyListFragment
 		@Override
 		public void onKeysAdded(final List<ECKey> keysAdded)
 		{
-			final List<ECKey> keys = wallet.getImportedKeys();
+			final List<ECKey> derivedKeys = wallet.getIssuedReceiveKeys();
+			final List<ECKey> randomKeys = wallet.getImportedKeys();
 
-			Collections.sort(keys, new Comparator<ECKey>()
+			Collections.sort(randomKeys, new Comparator<ECKey>()
 			{
 				@Override
 				public int compare(final ECKey lhs, final ECKey rhs)
@@ -282,7 +281,8 @@ public final class WalletAddressesFragment extends FancyListFragment
 				@Override
 				public void run()
 				{
-					adapter.replace(keys);
+					adapter.replaceDerivedKeys(derivedKeys);
+					adapter.replaceRandomKeys(randomKeys);
 				}
 			});
 		}

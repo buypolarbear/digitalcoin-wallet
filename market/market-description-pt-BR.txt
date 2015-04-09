@@ -6,7 +6,7 @@
 • Sem necessidade de cadastro, serviço web ou hospedagem! Esta carteira é descentralizada e "peer to peer".
 • Exibe a quantidade de Digitalcoins em BTC, mBTC e µBTC.
 • Conversão para moedas nacionais.
-• Envio e recebimento de digitalcoins via NFC, códigos QR ou endereços digitalcoin.
+• Envio e recebimento de Digitalcoins via NFC, códigos QR ou endereços Digitalcoin.
 • Catálogo para guardar os endereços mais utilizados.
 • Quando você estiver off-line, você ainda pode pagar via Bluetooth.
 • Notificações do sistema para moedas recebidas.

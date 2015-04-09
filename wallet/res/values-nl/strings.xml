@@ -1,7 +1,7 @@
 <?xml version='1.0' encoding='UTF-8'?>
 <resources>
-  <string name="toast_wallet_reset">Wallet is gereset,\nherstel zal enige tijd duren</string>
-  <string name="wallet_disclaimer_fragment_remind_safety">Gebruik op eigen risico. Lees de &lt;u&gt;veiligheids voorschriften&lt;/u&gt;.</string>
+  <string name="toast_wallet_reset">Portemonnee is gereset!\nHerstel zal enige tijd duren.</string>
+  <string name="wallet_disclaimer_fragment_remind_safety">Gebruik op eigen risico. Lees de &lt;u&gt;veiligheidsvoorschriften&lt;/u&gt;.</string>
   <string name="wallet_disclaimer_fragment_remind_backup">U moet uw &lt;u&gt;portomonnee back-uppen&lt;/u&gt;!</string>
   <string name="blockchain_state_progress_hours">%1$s, %2$d uur achter</string>
   <string name="blockchain_state_progress_days">%1$s, %2$d dagen achter</string>
@@ -12,7 +12,9 @@
   <string name="blockchain_state_progress_problem_storage">Synchronisatie: Probleem met opslaan</string>
   <string name="blockchain_state_progress_problem_network">Synchronisatie: Probleem met het netwerk</string>
   <string name="wallet_address_fragment_clipboard_msg">Digitalcoin adres gekopieërd naar klembord</string>
-  <string name="wallet_balance_fragment_too_much">Dit digitalcoin saldo is behoorlijk hoog om op zak te hebben, geadviseerd wordt een deel van uw saldo op een veiliger plek onder te brengen.</string>
+  <string name="wallet_address_fragment_clipboard_msg">Bitcoin adres gekopieërd naar klembord</string>
+  <string name="wallet_address_dialog_fragment_hint">Om je privacy te bescherm zal het adres wijzigen zodra een betaling ontvangen is.</string>
+  <string name="wallet_balance_fragment_too_much">Dit bitcoin saldo is behoorlijk hoog om op zak te hebben, geadviseerd wordt een deel van uw saldo op een veiliger plek onder te brengen.</string>
   <string name="wallet_balance_fragment_replaying">Balans is onbeschikbaar tijdens opnieuw spelen.</string>
   <string name="exchange_rates_activity_title">Wisselkoersen</string>
   <string name="exchange_rates_fragment_empty_text">Kan geen wisselkoersen laden.</string>
@@ -122,6 +124,7 @@
   <string name="request_coins_options_local_app_title">Aanvraag van lokale app</string>
   <string name="address_book_activity_title">Adresboek</string>
   <string name="address_book_list_receiving_title">Jouw adressen</string>
+  <string name="address_book_list_receiving_random">Oude adressen</string>
   <string name="address_book_list_sending_title">Verzendadres</string>
   <string name="address_book_empty_text">Geen vermeldingen in het adresboek</string>
   <string name="address_book_context_send_title">Verzend digitalcoins naar adres</string>
@@ -179,6 +182,7 @@
   <string name="export_keys_dialog_mail_intent_chooser">Archiveer beurs met…</string>
   <string name="export_keys_dialog_mail_intent_failed">Archiveren beurs mislukt.</string>
   <string name="import_export_keys_dialog_password">wachtwoord</string>
+  <string name="backup_wallet_dialog_password_again">opnieuw</string>
   <string name="import_export_keys_dialog_show">Toon wachtwoord</string>
   <string name="import_export_keys_dialog_failure_title">Fout</string>
   <string name="import_keys_intent_filter_action">Krijg portemonnee terug</string>
@@ -224,6 +228,11 @@
   <string name="preferences_initiate_reset_summary">Reset blokchain, transacties en portemonneebalans. Opniew spelen zal een tijdje duren.</string>
   <string name="preferences_initiate_reset_dialog_message">Wilt U uw blockchain opnieuw instellen en weer in gebruik nemen?\n\nHierbij zal uw wallet saldo tijdelijk verborgen zijn en zulle uw transacties verwijderd worden. Beiden worden weer hersteld tijdens de voortgang van het blockchain synchronisatie proces.</string>
   <string name="preferences_initiate_reset_dialog_positive">Reset</string>
+  <string name="preferences_extended_public_key_title">Toon xpub</string>
+  <string name="preferences_extended_public_key_summary">Geef de uitgebreide public key van je portemonnee weer zodat het geïmporteerd kan worden in andere apps en services. Wees voorzichtig: hiermee geef je je monetaire privacy prijs aan die app.</string>
+  <string name="bitmap_fragment_share">Deel…</string>
+  <string name="extended_public_key_fragment_title">Uitgebreide Public Key</string>
+  <string name="extended_public_key_fragment_share">Deel xpub…</string>
   <string name="report_issue_dialog_title_issue">Meld probleem</string>
   <string name="report_issue_dialog_title_crash">Vorige crash gedetecteerd</string>
   <string name="report_issue_dialog_message_issue">Beschrijf uw probleem precies genoeg om opnieuw veroorzaakt te kunnen worden. Denk erover om de dump toe te voegen als het specifiek is voor uw eigen portemonnee.</string>

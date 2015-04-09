@@ -27,8 +27,6 @@ import java.util.Collection;
 import java.util.HashMap;
 import java.util.Map;
 
-import javax.annotation.CheckForNull;
-import javax.annotation.Nonnull;
 import javax.annotation.Nullable;
 
 import org.bitcoinj.core.Address;
@@ -63,7 +61,7 @@ public final class RequestWalletBalanceTask
 	private final Handler backgroundHandler;
 	private final Handler callbackHandler;
 	private final ResultCallback resultCallback;
-	@CheckForNull
+	@Nullable
 	private final String userAgent;
 
 	private static final Logger log = LoggerFactory.getLogger(RequestWalletBalanceTask.class);
@@ -77,8 +75,7 @@ public final class RequestWalletBalanceTask
 		void onFail(int messageResId, Object... messageArgs);
 	}
 
-	public RequestWalletBalanceTask(@Nonnull final Handler backgroundHandler, @Nonnull final ResultCallback resultCallback,
-			@Nullable final String userAgent)
+	public RequestWalletBalanceTask(final Handler backgroundHandler, final ResultCallback resultCallback, @Nullable final String userAgent)
 	{
 		this.backgroundHandler = backgroundHandler;
 		this.callbackHandler = new Handler(Looper.myLooper());

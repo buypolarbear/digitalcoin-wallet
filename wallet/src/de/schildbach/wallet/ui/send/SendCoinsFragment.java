@@ -17,6 +17,36 @@
 
 package de.schildbach.wallet.ui.send;
 
+import java.io.FileNotFoundException;
+import java.io.InputStream;
+import java.util.Arrays;
+
+import javax.annotation.Nullable;
+
+import org.bitcoin.protocols.payments.Protos.Payment;
+import org.bitcoinj.core.Address;
+import org.bitcoinj.core.AddressFormatException;
+import org.bitcoinj.core.Coin;
+import org.bitcoinj.core.InsufficientMoneyException;
+import org.bitcoinj.core.Sha256Hash;
+import org.bitcoinj.core.Transaction;
+import org.bitcoinj.core.TransactionConfidence;
+import org.bitcoinj.core.TransactionConfidence.ConfidenceType;
+import org.bitcoinj.core.VerificationException;
+import org.bitcoinj.core.VersionedChecksummedBytes;
+import org.bitcoinj.core.Wallet;
+import org.bitcoinj.core.Wallet.BalanceType;
+import org.bitcoinj.core.Wallet.CouldNotAdjustDownwards;
+import org.bitcoinj.core.Wallet.DustySendRequested;
+import org.bitcoinj.core.Wallet.SendRequest;
+import org.bitcoinj.protocols.payments.PaymentProtocol;
+import org.bitcoinj.utils.MonetaryFormat;
+import org.bitcoinj.wallet.KeyChain.KeyPurpose;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
+import org.spongycastle.crypto.params.KeyParameter;
+
+
 import android.app.Activity;
 import android.app.Fragment;
 import android.app.FragmentManager;
@@ -88,7 +118,7 @@ public final class SendCoinsFragment extends Fragment
 	private ContentResolver contentResolver;
 	private LoaderManager loaderManager;
 	private FragmentManager fragmentManager;
-	@CheckForNull
+	@Nullable
 	private BluetoothAdapter bluetoothAdapter;
 
 	private final Handler handler = new Handler();
@@ -891,7 +921,7 @@ public final class SendCoinsFragment extends Fragment
 			new DeriveKeyTask(backgroundHandler)
 			{
 				@Override
-				protected void onSuccess(@Nonnull KeyParameter encryptionKey)
+				protected void onSuccess(KeyParameter encryptionKey)
 				{
 					signAndSendPayment(encryptionKey);
 				}
@@ -1002,7 +1032,7 @@ public final class SendCoinsFragment extends Fragment
 			}
 
 			@Override
-			protected void onInsufficientMoney(@Nonnull final Coin missing)
+			protected void onInsufficientMoney(final Coin missing)
 			{
 				setState(State.INPUT);
 
@@ -1053,7 +1083,7 @@ public final class SendCoinsFragment extends Fragment
 			}
 
 			@Override
-			protected void onFailure(@Nonnull Exception exception)
+			protected void onFailure(Exception exception)
 			{
 				setState(State.FAILED);
 
@@ -1329,33 +1359,33 @@ public final class SendCoinsFragment extends Fragment
 		}
 	}
 
-	private void initStateFromIntentExtras(@Nonnull final Bundle extras)
+	private void initStateFromIntentExtras(final Bundle extras)
 	{
 		final PaymentIntent paymentIntent = extras.getParcelable(SendCoinsActivity.INTENT_EXTRA_PAYMENT_INTENT);
 
 		updateStateFrom(paymentIntent);
 	}
 
-	private void initStateFromBitcoinUri(@Nonnull final Uri bitcoinUri)
+	private void initStateFromBitcoinUri(final Uri bitcoinUri)
 	{
 		final String input = bitcoinUri.toString();
 
 		new StringInputParser(input)
 		{
 			@Override
-			protected void handlePaymentIntent(@Nonnull final PaymentIntent paymentIntent)
+			protected void handlePaymentIntent(final PaymentIntent paymentIntent)
 			{
 				updateStateFrom(paymentIntent);
 			}
 
 			@Override
-			protected void handlePrivateKey(@Nonnull final VersionedChecksummedBytes key)
+			protected void handlePrivateKey(final VersionedChecksummedBytes key)
 			{
 				throw new UnsupportedOperationException();
 			}
 
 			@Override
-			protected void handleDirectTransaction(@Nonnull final Transaction transaction) throws VerificationException
+			protected void handleDirectTransaction(final Transaction transaction) throws VerificationException
 			{
 				throw new UnsupportedOperationException();
 			}
@@ -1368,7 +1398,7 @@ public final class SendCoinsFragment extends Fragment
 		}.parse();
 	}
 
-	private void initStateFromPaymentRequest(@Nonnull final String mimeType, @Nonnull final byte[] input)
+	private void initStateFromPaymentRequest(final String mimeType, final byte[] input)
 	{
 		new BinaryInputParser(mimeType, input)
 		{
@@ -1386,7 +1416,7 @@ public final class SendCoinsFragment extends Fragment
 		}.parse();
 	}
 
-	private void initStateFromIntentUri(@Nonnull final String mimeType, @Nonnull final Uri bitcoinUri)
+	private void initStateFromIntentUri(final String mimeType, final Uri bitcoinUri)
 	{
 		try
 		{
@@ -1413,7 +1443,7 @@ public final class SendCoinsFragment extends Fragment
 		}
 	}
 
-	private void updateStateFrom(final @Nonnull PaymentIntent paymentIntent)
+	private void updateStateFrom(final PaymentIntent paymentIntent)
 	{
 		log.info("got {}", paymentIntent);
 

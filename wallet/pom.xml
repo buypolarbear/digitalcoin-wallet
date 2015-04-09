@@ -6,7 +6,8 @@
 
 	<artifactId>wallet</artifactId>
 	<packaging>apk</packaging>
-	<version>3.01.420</version>
+
+	<version>3.01.423</version>
 	<name>digitalcoin Wallet</name>
 
 	<parent>
@@ -66,7 +67,7 @@
 		<dependency>
 			<groupId>org.bitcoinj</groupId>
 			<artifactId>digitalcoinj-core</artifactId>
-			<version>0.12.2</version>
+			<version>0.12.3</version>
 		</dependency>
 
 		<!-- de.schildbach.wallet.integration.android.* -->

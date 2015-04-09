@@ -1,4 +1,4 @@
-<b>Porta i tuoi digitalcoin sempre con te, in tasca!</b>  Paghi velocemente scansionando un QR-code. Come un commerciante, riceverai i pagamenti sicuri e istantanei. digitalcoin Wallet è la prima digitalcoin app mobile, e probabilmente anche la più sicura!
+﻿<b>Porta i tuoi digitalcoin sempre con te, in tasca!</b>  Paghi velocemente scansionando un QR-code. Come un commerciante, riceverai i pagamenti sicuri e istantanei. digitalcoin Wallet è la prima digitalcoin app mobile, e probabilmente anche la più sicura!
 
 
 <b>CARATTERISTICHE</b>
@@ -28,9 +28,7 @@ https://www.transifex.com/projects/p/bitcoin-wallet/
 
 <b>TESTIMONIANZE</b>
 
-• Molti portafogli mobile basano il loro codice basato su digitalcoin Wallet. Esempi: blockchain.info, Hive e KnC.
 • Portafoglio mobile raccomandato da http://digitalcoin.co
-• Raccomandato da BitPay.
 
 
 <i>Usala a tuo rischio!</i>

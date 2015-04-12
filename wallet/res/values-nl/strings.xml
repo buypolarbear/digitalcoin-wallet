@@ -12,7 +12,6 @@
   <string name="blockchain_state_progress_problem_storage">Synchronisatie: Probleem met opslaan</string>
   <string name="blockchain_state_progress_problem_network">Synchronisatie: Probleem met het netwerk</string>
   <string name="wallet_address_fragment_clipboard_msg">Digitalcoin adres gekopieërd naar klembord</string>
-  <string name="wallet_address_fragment_clipboard_msg">Bitcoin adres gekopieërd naar klembord</string>
   <string name="wallet_address_dialog_fragment_hint">Om je privacy te bescherm zal het adres wijzigen zodra een betaling ontvangen is.</string>
   <string name="wallet_balance_fragment_too_much">Dit bitcoin saldo is behoorlijk hoog om op zak te hebben, geadviseerd wordt een deel van uw saldo op een veiliger plek onder te brengen.</string>
   <string name="wallet_balance_fragment_replaying">Balans is onbeschikbaar tijdens opnieuw spelen.</string>

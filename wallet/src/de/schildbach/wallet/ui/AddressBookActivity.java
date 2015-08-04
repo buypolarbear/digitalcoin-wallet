@@ -17,13 +17,6 @@
 
 package de.schildbach.wallet.ui;
 
-import java.util.ArrayList;
-import java.util.List;
-
-import org.bitcoinj.core.Address;
-import org.bitcoinj.core.ECKey;
-import org.bitcoinj.core.Wallet;
-
 import android.app.Fragment;
 import android.app.FragmentManager;
 import android.app.FragmentTransaction;
@@ -35,12 +28,16 @@ import android.support.v4.view.ViewPager;
 import android.view.MenuItem;
 import android.view.View;
 import android.view.ViewGroup;
-
 import com.google.common.collect.Iterables;
-
 import de.schildbach.wallet.Constants;
 import de.schildbach.wallet.util.ViewPagerTabs;
 import hashengineering.digitalcoin.wallet.R;
+import org.bitcoinj.core.Address;
+import org.bitcoinj.core.ECKey;
+import org.bitcoinj.core.Wallet;
+
+import java.util.ArrayList;
+import java.util.List;
 
 
 /**

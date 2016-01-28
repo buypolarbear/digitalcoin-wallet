@@ -11,5 +11,3 @@ production/
 lib/
 out/
 *.iml
-checkpoints
-checkpoints.txt

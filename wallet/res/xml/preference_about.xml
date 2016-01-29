@@ -5,7 +5,7 @@
 		android:key="about_version"
 		android:title="@string/about_version_title" />
 	<Preference
-		android:summary="© 2011-2015, the Bitcoin Wallet developers\n© 2013-2015, Hash Engineering Solutions"
+		android:summary="© 2011-2016, the Bitcoin Wallet developers\n© 2013-2016, Hash Engineering Solutions"
 		android:title="@string/about_copyright_title" />
 	<Preference
 		android:key="about_license"
@@ -30,18 +30,18 @@
 	<Preference
 		android:key="about_community_googleplus"
 		android:summary="@string/about_community_googleplus_summary"
-		android:title="@string/about_community_googleplus_title" >
-		<intent
+		android:title="Digitalcoin Wallet App Discussion" >
+	<intent
 			android:action="android.intent.action.VIEW"
-			android:data="https://plus.google.com/communities/105515929887248493912" />
+			android:data="https://forum.digitalcoin.co/threads/1683-Digitalcoin-Android-Wallet-(release-4)" />
 	</Preference>
 	<Preference
 		android:key="about_twitter"
 		android:summary="\@bitcoin_wallet"
-		android:title="Twitter" >
+		android:title="Digitalcoin Discussions" >
 		<intent
 			android:action="android.intent.action.VIEW"
-			android:data="https://twitter.com/#!/bitcoin_wallet" />
+			android:data="https://forum.digitalcoin.co/forum.php" />
 	</Preference>
 	<Preference
 		android:key="about_credits_bitcoinj"

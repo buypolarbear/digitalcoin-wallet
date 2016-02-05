@@ -10,8 +10,13 @@ FITUR:
 • Notifikasi sistem untuk konektivitas Digitalcoin dan menerima koin.
 • Widget Apl untuk saldo Digitalcoin.
 
+<<<<<<< HEAD
 Anda dapat mengetahui lebih mengenai Digitalcoin di
 http://digitalcoin.co
+=======
+Anda dapat mengetahui lebih mengenai Bitcoin di
+https://bitcoin.org
+>>>>>>> upstream/master
 
 Jika Anda ingin berkontribusi kepada Digitalcoin Wallet, proyeknya berada di
 https://github.com/HashEngineering/digitalcoin-wallet

@@ -46,7 +46,6 @@ import android.os.Handler;
 import android.os.Looper;
 
 import com.google.common.base.Charsets;
-import com.google.common.io.BaseEncoding;
 
 import de.schildbach.wallet.Constants;
 import de.schildbach.wallet.util.Io;
@@ -65,8 +64,6 @@ public final class RequestWalletBalanceTask
 	private final String userAgent;
 
 	private static final Logger log = LoggerFactory.getLogger(RequestWalletBalanceTask.class);
-
-	private final BaseEncoding HEX = BaseEncoding.base16().lowerCase();
 
 	public interface ResultCallback
 	{
@@ -109,6 +106,13 @@ public final class RequestWalletBalanceTask
                         i++;
                     }
                 }
+/*				url.append("outputs");
+				url.append("?per_page=MAX");
+				url.append("&operator=AND");
+				url.append("&spent_state=UNSPENT");
+				for (final Address address : addresses)
+					url.append("&address[]=").append(address.toString());
+*/
 				log.debug("trying to request wallet balance from {}", url);
 
 				HttpURLConnection connection = null;
@@ -160,6 +164,8 @@ public final class RequestWalletBalanceTask
 
                             if (!success.equals(success))
                                 throw new IOException("api status " + "not successful" + " when fetching unspent outputs");
+			//			if (!"false".equals(jsonPagination.getString("next_page")))
+			//				throw new IOException("result set too big");
 
                             JSONObject dataJson = json.getJSONObject("data");
                             jsonOutputs = dataJson.getJSONArray("unspent");
@@ -183,18 +189,23 @@ public final class RequestWalletBalanceTask
 
 								uxtoHash = new Sha256Hash(jsonOutput.getString("transaction_hash"));
 								uxtoIndex = jsonOutput.getInt("transaction_index");
-								uxtoScriptBytes = HEX.decode(jsonOutput.getString("script_pub_key"));
+								uxtoScriptBytes = Constants.HEX.decode(jsonOutput.getString("script_pub_key"));
 								uxtoValue = Coin.valueOf(Long.parseLong(jsonOutput.getString("value")));
                             }
                             else
                             {
                                 uxtoHash = new Sha256Hash(jsonOutput.getString("tx"));
                                 uxtoIndex = jsonOutput.getInt("n");
-                                uxtoScriptBytes = HEX.decode(jsonOutput.getString("script"));
+                                uxtoScriptBytes = Constants.HEX.decode(jsonOutput.getString("script"));
                                 uxtoValue = Coin.valueOf((long)(Double.parseDouble(String.format("%.08f", jsonOutput.getDouble("amount")).replace(",", ".")) *100000000));
                                 //jsonOutput.getInt("confirmations");
                             }
 
+/*							final Sha256Hash uxtoHash = Sha256Hash.wrap(jsonOutput.getString("transaction_hash"));
+							final int uxtoIndex = jsonOutput.getInt("transaction_index");
+							final byte[] uxtoScriptBytes = Constants.HEX.decode(jsonOutput.getString("script_pub_key"));
+							final Coin uxtoValue = Coin.valueOf(Long.parseLong(jsonOutput.getString("value")));
+							*/
 
 							Transaction tx = transactions.get(uxtoHash);
 							if (tx == null)

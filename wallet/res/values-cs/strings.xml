@@ -12,6 +12,7 @@
   <string name="blockchain_state_progress_problem_storage">Synchronizace: Problém úložiště</string>
   <string name="blockchain_state_progress_problem_network">Synchronizace: Problém se sítí</string>
   <string name="wallet_address_fragment_clipboard_msg">Adresa zkopírována do schránky</string>
+  <string name="wallet_address_dialog_fragment_hint">Z důvodu ochrany vašeho soukromí dojde ke změně vaší adresy pokaždé po přijetí platby.</string>
   <string name="wallet_balance_fragment_too_much">Tato částka je poměrně vysoká na nosení v kapse. Převeďte ji prosím na bezpečnější místo.</string>
   <string name="wallet_balance_fragment_replaying">Bilance je nedostupná během synchronizace.</string>
   <string name="exchange_rates_activity_title">Směnné kurzy</string>
@@ -23,12 +24,12 @@
   <string name="exchange_rates_fragment_source">Cena z %s</string>
   <string name="exchange_rates_options_search">Vyhledat směnný kurz</string>
   <string name="exchange_rates_context_set_as_default_title">Nastavit jako výchozí cizí měnu</string>
-  <string name="wallet_transactions_fragment_tab_received">Obdrženo</string>
-  <string name="wallet_transactions_fragment_tab_all">Oboje</string>
-  <string name="wallet_transactions_fragment_tab_sent">Zasláno</string>
-  <string name="wallet_transactions_fragment_empty_text_received">Zatím žádné digitalcoiny neobdrženy</string>
-  <string name="wallet_transactions_fragment_empty_text_sent">Zatím žádné digitalcoiny neodeslány</string>
-  <string name="wallet_transactions_fragment_empty_text_howto">Jak získat Digitalcoiny?\n\nSměnou za klasické peníze,\nprodejem zboží nebo služeb\nnebo vyděláním prací.</string>
+  <string name="wallet_transactions_options_filter_received">Obdrženo</string>
+  <string name="wallet_transactions_options_filter_all">Oboje</string>
+  <string name="wallet_transactions_options_filter_sent">Zasláno</string>
+  <string name="wallet_transactions_fragment_empty_text_received">Zatím žádné bitcoiny neobdrženy</string>
+  <string name="wallet_transactions_fragment_empty_text_sent">Zatím žádné bitcoiny neodeslány</string>
+  <string name="wallet_transactions_fragment_empty_text_howto">Jak získat Bitcoiny?\n\nSměnou za klasické peníze,\nprodejem zboží nebo služeb\nnebo vyděláním prací.</string>
   <string name="wallet_transactions_row_warning_backup">Gratulujeme, přijal jste vaši první platbu! Už jste si &lt;u&gt;zazálohoval vaši peněženku&lt;/u&gt;, aby jste se ochránil proti ztrátě?</string>
   <string name="wallet_transactions_fragment_coinbase">vytěženo</string>
   <string name="wallet_transactions_fragment_internal">interní</string>
@@ -71,8 +72,6 @@
   <string name="send_coins_fragment_direct_payment_nack">Vaše platba byla odmítnuta přímým spojením.</string>
   <string name="send_coins_fragment_direct_payment_failed_title">Přímá platba selhala</string>
   <string name="send_coins_fragment_direct_payment_failed_msg">Vaše platba bude stejně odeslána pomocí P2P sítě.</string>
-  <string name="send_coins_fragment_private_key_password">PIN</string>
-  <string name="send_coins_fragment_private_key_bad_password">špatný PIN!</string>
   <string name="send_coins_fragment_button_send">Poslat</string>
   <string name="send_coins_fragment_button_back">Zpět</string>
   <string name="send_coins_fragment_insufficient_money_title">Nedostatek mincí.</string>
@@ -85,9 +84,7 @@
   <string name="send_coins_sent_msg">Odesláno!</string>
   <string name="send_coins_failed_msg">Chyba!</string>
   <string name="send_coins_error_msg">Problém při zasílání!</string>
-  <string name="send_coins_options_priority">Rychlé potvrzení, vyšší poplatky</string>
   <string name="send_coins_options_empty">Prázdná peněženka</string>
-  <string name="send_coins_address_context_clear_title">Zadat novou adresu</string>
   <string name="sweep_wallet_activity_title">Načíst papírovou peněženku</string>
   <string name="sweep_wallet_fragment_intro">Chystáte se načíst papírovou peněženku nebo kupón. Tato akce přemístí veškeré mince z papíru do vaší peněženky na tomto zařízení. Poté co bude transakce potvrzena už papír nepotřebujete a neměl by být z bezpečnostních důvodů dále používán.</string>
   <string name="sweep_wallet_fragment_hint">Papírové peněženky se nejčastěji používají jako cold storage. Některé digitalcoinmaty je tisknou na lístcích, než aby je poslali přímo do vašeho zařízení. Lidé také někdy používají přednabité papírové peněženky pro směnu digitalcoinů (což ale není doporučeno)</string>
@@ -106,8 +103,6 @@
   <string name="sweep_wallet_options_reload">Znovu načíst bilanci</string>
   <string name="maintenance_dialog_title">Údržba doporučena.</string>
   <string name="maintenance_dialog_message">Přijal jste %1$s na nezabezpečenou adresu. Přejete si převést tyto mince na zabezpečenou adresu? Malý poplatek síti %2$s bude zaplacen.</string>
-  <string name="maintenance_dialog_private_key_password">PIN</string>
-  <string name="maintenance_dialog_private_key_bad_password">špatný PIN!</string>
   <string name="maintenance_dialog_state_decrypting">Dešifruji…</string>
   <string name="maintenance_dialog_state_done">Hotovo.</string>
   <string name="maintenance_dialog_button_move">Přemístit</string>
@@ -122,6 +117,7 @@
   <string name="request_coins_options_local_app_title">Požadavek z lokální aplikace</string>
   <string name="address_book_activity_title">Adresář</string>
   <string name="address_book_list_receiving_title">Vaše adresy</string>
+  <string name="address_book_list_receiving_random">Staré adresy</string>
   <string name="address_book_list_sending_title">Odchozí adresy</string>
   <string name="address_book_empty_text">Žádný záznam v adresáři</string>
   <string name="address_book_context_send_title">Poslat digitalcoiny na adresu</string>
@@ -179,6 +175,8 @@
   <string name="export_keys_dialog_mail_intent_chooser">Archivovat peněženku pomocí…</string>
   <string name="export_keys_dialog_mail_intent_failed">Archivace peněženky selhala.</string>
   <string name="import_export_keys_dialog_password">heslo</string>
+  <string name="backup_wallet_dialog_password_again">znovu</string>
+  <string name="backup_wallet_dialog_password_mismatch">nesouhlasí!</string>
   <string name="import_export_keys_dialog_show">Ukázat heslo</string>
   <string name="import_export_keys_dialog_failure_title">Chyba</string>
   <string name="import_keys_intent_filter_action">Obnovit peněženku</string>
@@ -186,8 +184,6 @@
   <string name="encrypt_keys_dialog_message">Útrata z vaší peněženky bude chráněna zvoleným PINem.</string>
   <string name="encrypt_keys_dialog_warning">Důležité: Nepoužívejte běžná čísla (jako je např. rok narození) jako váš PIN.</string>
   <string name="encrypt_keys_dialog_password_old">Starý PIN</string>
-  <string name="encrypt_keys_dialog_password_new">PIN</string>
-  <string name="encrypt_keys_dialog_bad_password">špatný PIN!</string>
   <string name="encrypt_keys_dialog_password_strength_weak">slabé</string>
   <string name="encrypt_keys_dialog_password_strength_fair">ujde</string>
   <string name="encrypt_keys_dialog_password_strength_good">dobré</string>
@@ -226,11 +222,12 @@
   <string name="preferences_initiate_reset_dialog_positive">Obnovit</string>
   <string name="preferences_extended_public_key_title">Zobrazit xpub</string>
   <string name="preferences_extended_public_key_summary">Zobrazit rozšířený veřejný klíč Vaší peněženky za účelem importování do jiných aplikací a služeb. Buďte opatrní: tímro sdílíte Vaše peněžní soukromí s danou aplikaci.</string>
+  <string name="bitmap_fragment_share">Sdílet…</string>
   <string name="extended_public_key_fragment_title">Rozšířený veřejný klíč</string>
   <string name="extended_public_key_fragment_share">Sdílet xpub…</string>
   <string name="report_issue_dialog_title_issue">Nahlásit problém</string>
   <string name="report_issue_dialog_title_crash">Detekován předchozí pád aplikace</string>
-  <string name="report_issue_dialog_message_issue">Popište prosím problém tak přesně aby se dal zopakovat. Pokud je specifický pro vaši peněženku, zvažte připojení dumpu.</string>
+  <string name="report_issue_dialog_message_issue">Popište prosím problém tak přesně aby se dal zopakovat.</string>
   <string name="report_issue_dialog_message_crash">Přejete si odeslat report o pádu aplikace a tím pomoct opravě tohoto problému v budoucnosti?</string>
   <string name="report_issue_dialog_description">popis problému</string>
   <string name="report_issue_dialog_report">Nahlásit</string>
@@ -272,15 +269,16 @@
   <string name="button_request_coins">Vyžádat Digitalcoiny</string>
   <string name="button_send_coins">Zaslat Digitalcoiny</string>
   <string name="button_scan">Skenovat</string>
-  <string name="button_edit_address">Přidat/upravit adresu</string>
   <string name="button_settings">Nastavení</string>
   <string name="action_show_qr">Zobrazit QR kód</string>
   <string name="action_browse">Prohlédnout</string>
   <string name="time_today">dnes</string>
   <string name="address_unlabeled">(nepojmenováno)</string>
+  <string name="private_key_password">PIN</string>
+  <string name="private_key_bad_password">špatný PIN!</string>
   <!--generic error messages-->
   <string name="error_io">I/O chyba: %s</string>
   <string name="error_parse">Chyba při načítání: %s</string>
   <string name="error_http">HTTP chyba %1$s:\n%2$s</string>
-  <string name="error_bluetooth">Bluetooth chyba %1$s</string>
+  <string name="error_bluetooth">Bluetooth chyba: %1$s</string>
 </resources>

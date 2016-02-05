@@ -32,7 +32,6 @@ import java.util.Comparator;
 import java.util.LinkedList;
 import java.util.List;
 
-import org.bitcoinj.core.AddressFormatException;
 import org.bitcoinj.core.Transaction;
 import org.bitcoinj.core.VerificationException;
 import org.bitcoinj.core.VersionedChecksummedBytes;
@@ -220,7 +219,6 @@ public final class WalletActivity extends AbstractWalletActivity
 		super.onCreateOptionsMenu(menu);
 
 		getMenuInflater().inflate(R.menu.wallet_options, menu);
-		menu.findItem(R.id.wallet_options_donate).setVisible(false);
 
 		return true;
 	}
@@ -301,10 +299,6 @@ public final class WalletActivity extends AbstractWalletActivity
 				HelpDialogFragment.page(getFragmentManager(), R.string.help_safety);
 				return true;
 
-			case R.id.wallet_options_donate:
-				handleDonate();
-				return true;
-
 			case R.id.wallet_options_help:
 				HelpDialogFragment.page(getFragmentManager(), R.string.help_wallet);
 				return true;
@@ -343,19 +337,6 @@ public final class WalletActivity extends AbstractWalletActivity
     	finish();
     }
 
-	private void handleDonate()
-	{
-		try
-		{
-			SendCoinsActivity.start(this, PaymentIntent.fromAddress(Constants.DONATION_ADDRESS, getString(R.string.wallet_donate_address_label)));
-		}
-		catch (final AddressFormatException x)
-		{
-			// cannot happen, address is hardcoded
-			throw new RuntimeException(x);
-		}
-	}
-
 	@Override
 	protected Dialog onCreateDialog(final int id, final Bundle args)
 	{
@@ -381,6 +362,7 @@ public final class WalletActivity extends AbstractWalletActivity
 	private Dialog createRestoreWalletDialog()
 	{
 		final View view = getLayoutInflater().inflate(R.layout.restore_wallet_dialog, null);
+		final TextView messageView = (TextView) view.findViewById(R.id.restore_wallet_dialog_message);
 		final Spinner fileView = (Spinner) view.findViewById(R.id.import_keys_from_storage_file);
 		final EditText passwordView = (EditText) view.findViewById(R.id.import_keys_from_storage_password);
 
@@ -453,6 +435,15 @@ public final class WalletActivity extends AbstractWalletActivity
 			}
 		};
 
+		final String path;
+		final String backupPath = Constants.Files.EXTERNAL_WALLET_BACKUP_DIR.getAbsolutePath();
+		final String storagePath = Constants.Files.EXTERNAL_STORAGE_DIR.getAbsolutePath();
+		if (backupPath.startsWith(storagePath))
+			path = backupPath.substring(storagePath.length());
+		else
+			path = backupPath;
+		messageView.setText(getString(R.string.import_keys_dialog_message, path));
+
 		fileView.setAdapter(adapter);
 
 		return dialog.create();
@@ -467,8 +458,7 @@ public final class WalletActivity extends AbstractWalletActivity
 		// external storage
 		if (Constants.Files.EXTERNAL_WALLET_BACKUP_DIR.exists() && Constants.Files.EXTERNAL_WALLET_BACKUP_DIR.isDirectory())
 			for (final File file : Constants.Files.EXTERNAL_WALLET_BACKUP_DIR.listFiles())
-				if (WalletUtils.BACKUP_FILE_FILTER.accept(file) || WalletUtils.KEYS_FILE_FILTER.accept(file)
-						|| Crypto.OPENSSL_FILE_FILTER.accept(file))
+				if (Crypto.OPENSSL_FILE_FILTER.accept(file))
 					files.add(file);
 
 		// internal storage
@@ -750,7 +740,7 @@ public final class WalletActivity extends AbstractWalletActivity
 			final byte[] plainText = Crypto.decryptBytes(cipherText.toString(), password.toCharArray());
 			final InputStream is = new ByteArrayInputStream(plainText);
 
-			restoreWallet(WalletUtils.restoreWalletFromProtobufOrBase58(is));
+			restoreWallet(WalletUtils.restoreWalletFromProtobufOrBase58(is, Constants.NETWORK_PARAMETERS));
 
 			log.info("successfully restored encrypted wallet: {}", file);
 		}
@@ -779,7 +769,7 @@ public final class WalletActivity extends AbstractWalletActivity
 		try
 		{
 			is = new FileInputStream(file);
-			restoreWallet(WalletUtils.restoreWalletFromProtobuf(is));
+			restoreWallet(WalletUtils.restoreWalletFromProtobuf(is, Constants.NETWORK_PARAMETERS));
 
 			log.info("successfully restored unencrypted wallet: {}", file);
 		}
@@ -822,7 +812,7 @@ public final class WalletActivity extends AbstractWalletActivity
 		try
 		{
 			is = new FileInputStream(file);
-			restoreWallet(WalletUtils.restorePrivateKeysFromBase58(is));
+			restoreWallet(WalletUtils.restorePrivateKeysFromBase58(is, Constants.NETWORK_PARAMETERS));
 
 			log.info("successfully restored unencrypted private keys: {}", file);
 		}

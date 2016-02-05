@@ -4,12 +4,12 @@
 	xmlns:tools="http://schemas.android.com/tools"
 	package="hashengineering.digitalcoin.wallet"
 	android:installLocation="internalOnly"
-	android:versionCode="3004234"
-	android:versionName="3.01.4234" >
+	android:versionCode="3004460"
+	android:versionName="3.01.4460" >
 
 	<uses-sdk
 		android:minSdkVersion="15"
-		android:targetSdkVersion="16"
+		android:targetSdkVersion="21"
 		tools:ignore="OldTargetApi" />
 
 	<uses-permission android:name="android.permission.INTERNET" />
@@ -62,6 +62,7 @@
 		<activity
 			android:name="de.schildbach.wallet.ui.WalletActivity"
 			android:configChanges="keyboard|keyboardHidden"
+			android:exported="true"
 			android:launchMode="singleTask"
 			android:theme="@style/My.Theme" />
 
@@ -178,7 +179,6 @@
 				<category android:name="android.intent.category.DEFAULT" />
 
 				<data android:mimeType="application/x-digitalcoin-wallet-backup" />
-				<data android:mimeType="application/octet-stream" />
 			</intent-filter>
 		</activity>
 		<activity

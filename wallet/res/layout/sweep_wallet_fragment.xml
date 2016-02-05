@@ -64,9 +64,7 @@
 		android:layout_marginRight="@dimen/list_entry_padding_horizontal_lax"
 		android:layout_marginTop="8dp" />
 
-	<!-- stretch dummy -->
-
-	<ImageView
+	<Space
 		android:layout_width="0px"
 		android:layout_height="0px"
 		android:layout_weight="1" />
@@ -83,10 +81,11 @@
 		android:textColor="@color/fg_less_significant"
 		android:textSize="@dimen/font_size_small" />
 
-	<ListView
+	<FrameLayout
 		android:id="@+id/sweep_wallet_fragment_sent_transaction"
 		android:layout_width="match_parent"
 		android:layout_height="wrap_content"
+		android:layoutAnimation="@anim/transaction_layout_anim"
 		android:visibility="gone" />
 
 	<include layout="@layout/send_coins_buttons_include" />

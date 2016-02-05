@@ -23,6 +23,7 @@ import java.util.List;
 
 import org.bitcoinj.core.AbstractWalletEventListener;
 import org.bitcoinj.core.Address;
+import org.bitcoinj.core.CoinDefinition;
 import org.bitcoinj.core.ECKey;
 import org.bitcoinj.core.Wallet;
 import org.bitcoinj.core.WalletEventListener;
@@ -50,6 +51,7 @@ import android.widget.BaseAdapter;
 import android.widget.ListAdapter;
 import android.widget.ListView;
 import de.schildbach.wallet.AddressBookProvider;
+import de.schildbach.wallet.Configuration;
 import de.schildbach.wallet.Constants;
 import de.schildbach.wallet.WalletApplication;
 import de.schildbach.wallet.util.BitmapFragment;
@@ -66,6 +68,7 @@ public final class WalletAddressesFragment extends FancyListFragment
 {
 	private AddressBookActivity activity;
 	private WalletApplication application;
+	private Configuration config;
 	private Wallet wallet;
 	private ClipboardManager clipboardManager;
 	private ContentResolver contentResolver;
@@ -81,6 +84,7 @@ public final class WalletAddressesFragment extends FancyListFragment
 
 		this.activity = (AddressBookActivity) activity;
 		this.application = (WalletApplication) activity.getApplication();
+		this.config = application.getConfiguration();
 		this.wallet = application.getWallet();
 		this.clipboardManager = (ClipboardManager) activity.getSystemService(Context.CLIPBOARD_SERVICE);
 		this.contentResolver = activity.getContentResolver();
@@ -186,8 +190,9 @@ public final class WalletAddressesFragment extends FancyListFragment
 						return true;
 
 					case R.id.wallet_addresses_context_browse:
-						startActivity(new Intent(Intent.ACTION_VIEW, Uri.parse(Constants.EXPLORE_BASE_URL + Constants.EXPLORE_ADDRESS_PATH
-								+ getAddress(position).toString())));
+						startActivity(new Intent(Intent.ACTION_VIEW,
+								Uri.withAppendedPath(config.getBlockExplorer(), CoinDefinition.BLOCKEXPLORER_ADDRESS_PATH + getAddress(position).toString())));
+
 
 						mode.finish();
 						return true;
@@ -213,12 +218,12 @@ public final class WalletAddressesFragment extends FancyListFragment
 
 			private void handleEdit(final Address address)
 			{
-				EditAddressBookEntryFragment.edit(getFragmentManager(), address.toString());
+				EditAddressBookEntryFragment.edit(getFragmentManager(), address);
 			}
 
 			private void handleShowQr(final Address address)
 			{
-				final String uri = BitcoinURI.convertToBitcoinURI(address, null, null, null);
+				final String uri = BitcoinURI.convertToBitcoinURI(address, null, config.getOwnName(), null);
 				final int size = getResources().getDimensionPixelSize(R.dimen.bitmap_dialog_qr_size);
 				BitmapFragment.show(getFragmentManager(), Qr.bitmap(uri, size));
 			}

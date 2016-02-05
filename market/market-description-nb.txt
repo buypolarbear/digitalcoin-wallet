@@ -6,9 +6,15 @@
 • Ingen registrering, webtjeneste eller sky trengs! Denne lommeboken er desentralisert og peer-to-peer.
 • Visning av bitcoinbeløpet i BTC, mBTC og μBTC.
 • Konvertering til og fra nasjonale valutaer.
+<<<<<<< HEAD
 • Sende og motta bitcoin via NFC, QR-koder eller Digitalcoin-URLer.
 • Adressebok for regelmessig brukte Digitalcoin-adresser.
 • Når du er frakoblet, kan du fortsatt betale via Bluetooth.
+=======
+• Sende og motta bitcoin via NFC, QR-koder eller Bitcoin-URLer.
+• Adressebok for regelmessig brukte Bitcoin-adresser.
+• Når du er frakoblet, kan du fortsatt betale via blåtann.
+>>>>>>> upstream/master
 • Systemvarsling for mottatte mynter.
 • Sveiping av papirlommebøker (f.eks. de som brukes til kaldlagring).
 • Miniprogram for saldo over bitcoins.

@@ -12,7 +12,11 @@ FEATURES:
 • וידג'ט לבדיקת יתרת הביטקוין שלך
 
 אתה יכול למצוא יותר על ביטקוין בכתובת
+<<<<<<< HEAD
 לפרטים נוספים : http://digitalcoin.co
+=======
+לפרטים נוספים : https://bitcoin.org
+>>>>>>> upstream/master
 
 אם אתה רוצה לתרום לפרויקט ארנק הביטקוין, הפרויקט ממוקם ב
 https://github.com/HashEngineering/digitalcoin-wallet

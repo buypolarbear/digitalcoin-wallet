@@ -17,15 +17,13 @@
 
 package de.schildbach.wallet.ui;
 
-import java.util.ArrayList;
-import java.util.Collection;
 import java.util.HashSet;
 import java.util.List;
 import java.util.Map;
 import java.util.Set;
 import java.util.concurrent.RejectedExecutionException;
 
-import org.bitcoinj.core.Block;
+import org.bitcoinj.core.CoinDefinition;
 import org.bitcoinj.core.Sha256Hash;
 import org.bitcoinj.core.StoredBlock;
 import org.bitcoinj.core.Transaction;
@@ -33,7 +31,7 @@ import org.bitcoinj.core.Wallet;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import android.app.Activity;
-import android.app.ListFragment;
+import android.app.Fragment;
 import android.app.LoaderManager;
 import android.app.LoaderManager.LoaderCallbacks;
 import android.content.*;
@@ -41,25 +39,26 @@ import android.net.Uri;
 import android.os.Bundle;
 import android.os.IBinder;
 import android.support.v4.content.LocalBroadcastManager;
-import android.text.format.DateUtils;
-import android.view.*;
-import android.widget.BaseAdapter;
-import android.widget.ListView;
-import android.widget.TextView;
-import com.hashengineering.crypto.difficulty.Utils;
+import android.support.v7.widget.LinearLayoutManager;
+import android.support.v7.widget.RecyclerView;
+import android.view.LayoutInflater;
+import android.view.MenuItem;
+import android.view.View;
+import android.view.ViewGroup;
+import android.widget.PopupMenu;
+import android.widget.PopupMenu.OnMenuItemClickListener;
+import android.widget.ViewAnimator;
 import de.schildbach.wallet.Configuration;
 import de.schildbach.wallet.Constants;
 import de.schildbach.wallet.WalletApplication;
 import de.schildbach.wallet.service.BlockchainService;
 import de.schildbach.wallet.service.BlockchainServiceImpl;
-import de.schildbach.wallet.util.WalletUtils;
 import hashengineering.digitalcoin.wallet.R;
-import org.digitalcoinj.DigitalcoinParams;
 
 /**
  * @author Andreas Schildbach
  */
-public final class BlockListFragment extends ListFragment
+public final class BlockListFragment extends Fragment implements BlockListAdapter.OnClickListener
 {
 	private AbstractWalletActivity activity;
 	private WalletApplication application;
@@ -69,8 +68,9 @@ public final class BlockListFragment extends ListFragment
 
 	private BlockchainService service;
 
+	private ViewAnimator viewGroup;
+	private RecyclerView recyclerView;
 	private BlockListAdapter adapter;
-	private Set<Transaction> transactions;
 
 	private static final int ID_BLOCK_LOADER = 0;
 	private static final int ID_TRANSACTION_LOADER = 1;
@@ -104,8 +104,22 @@ public final class BlockListFragment extends ListFragment
 	{
 		super.onCreate(savedInstanceState);
 
-		adapter = new BlockListAdapter();
-		setListAdapter(adapter);
+		adapter = new BlockListAdapter(activity, wallet, this);
+		adapter.setFormat(config.getFormat());
+	}
+
+	@Override
+	public View onCreateView(final LayoutInflater inflater, final ViewGroup container, final Bundle savedInstanceState)
+	{
+		final View view = inflater.inflate(R.layout.block_list_fragment, container, false);
+
+		viewGroup = (ViewAnimator) view.findViewById(R.id.block_list_group);
+
+		recyclerView = (RecyclerView) view.findViewById(R.id.block_list);
+		recyclerView.setLayoutManager(new LinearLayoutManager(activity));
+		recyclerView.setAdapter(adapter);
+
+		return view;
 	}
 
 	private boolean resumed = false;
@@ -151,51 +165,28 @@ public final class BlockListFragment extends ListFragment
 	}
 
 	@Override
-	public void onListItemClick(final ListView l, final View v, final int position, final long id)
+	public void onBlockMenuClick(final View view, final StoredBlock block)
 	{
-		final StoredBlock storedBlock = adapter.getItem(position);
+		final PopupMenu popupMenu = new PopupMenu(activity, view);
+		popupMenu.inflate(R.menu.blocks_context);
 
-		activity.startActionMode(new ActionMode.Callback()
+		popupMenu.setOnMenuItemClickListener(new OnMenuItemClickListener()
 		{
 			@Override
-			public boolean onCreateActionMode(final ActionMode mode, final Menu menu)
-			{
-				final MenuInflater inflater = mode.getMenuInflater();
-				inflater.inflate(R.menu.blocks_context, menu);
-
-				return true;
-			}
-
-			@Override
-			public boolean onPrepareActionMode(final ActionMode mode, final Menu menu)
-			{
-				mode.setTitle(Integer.toString(storedBlock.getHeight()));
-				mode.setSubtitle(storedBlock.getHeader().getHashAsString());
-
-				return true;
-			}
-
-			@Override
-			public boolean onActionItemClicked(final ActionMode mode, final MenuItem item)
+			public boolean onMenuItemClick(final MenuItem item)
 			{
 				switch (item.getItemId())
 				{
 					case R.id.blocks_context_browse:
-						startActivity(new Intent(Intent.ACTION_VIEW, Uri.parse(Constants.EXPLORE_BASE_URL + Constants.EXPLORE_BLOCK_PATH
-								+ storedBlock.getHeader().getHashAsString())));
 
-						mode.finish();
+						startActivity(new Intent(Intent.ACTION_VIEW,
+								Uri.withAppendedPath(config.getBlockExplorer(), CoinDefinition.BLOCKEXPLORER_BLOCK_PATH + block.getHeader().getHashAsString())));
 						return true;
 				}
-
 				return false;
 			}
-
-			@Override
-			public void onDestroyActionMode(final ActionMode mode)
-			{
-			}
 		});
+		popupMenu.show();
 	}
 
 	private final ServiceConnection serviceConnection = new ServiceConnection()
@@ -225,6 +216,8 @@ public final class BlockListFragment extends ListFragment
 			adapter.notifyDataSetChanged();
 		}
 	};
+
+/*<<<<<<< HEAD
 
 	private final class BlockListAdapter extends BaseAdapter
 	{
@@ -371,6 +364,8 @@ public final class BlockListFragment extends ListFragment
 		}
 	}
 
+=======
+>>>>>>> upstream/master*/
 	private static class BlockLoader extends AsyncTaskLoader<List<StoredBlock>>
 	{
 		private LocalBroadcastManager broadcastManager;
@@ -437,6 +432,7 @@ public final class BlockListFragment extends ListFragment
 		public void onLoadFinished(final Loader<List<StoredBlock>> loader, final List<StoredBlock> blocks)
 		{
 			adapter.replace(blocks);
+			viewGroup.setDisplayedChild(1);
 
 			final Loader<Set<Transaction>> transactionLoader = loaderManager.getLoader(ID_TRANSACTION_LOADER);
 			if (transactionLoader != null && transactionLoader.isStarted())
@@ -489,18 +485,13 @@ public final class BlockListFragment extends ListFragment
 		@Override
 		public void onLoadFinished(final Loader<Set<Transaction>> loader, final Set<Transaction> transactions)
 		{
-			BlockListFragment.this.transactions = transactions;
-
-			adapter.notifyDataSetChanged();
+			adapter.replaceTransactions(transactions);
 		}
 
 		@Override
 		public void onLoaderReset(final Loader<Set<Transaction>> loader)
 		{
-			BlockListFragment.this.transactions.clear(); // be nice
-			BlockListFragment.this.transactions = null;
-
-			adapter.notifyDataSetChanged();
+			adapter.clearTransactions();
 		}
 	};
 }

@@ -16,11 +16,17 @@
 		<item>0/6</item>
 	</string-array>
 	<string-array name="preferences_precision_labels">
-		<item>DGC, 8 digits</item>
-		<item>DGC, 6 digits</item>
-		<item>DGC, 4 digits</item>
-		<item>mDGC, 2 digits</item>
-		<item>µDGC, no digits</item>
+		<item>@string/preferences_precision_labels_8</item>
+		<item>@string/preferences_precision_labels_6</item>
+		<item>@string/preferences_precision_labels_4</item>
+		<item>@string/preferences_precision_labels_2_3</item>
+		<item>@string/preferences_precision_labels_0_6</item>
+	</string-array>
+	<string-array name="preferences_block_explorer_values">
+		<item>http://dgc.blockr.io/</item>
+	</string-array>
+	<string-array name="preferences_block_explorer_labels">
+		<item>Blockr</item>
 	</string-array>
 
 </resources>

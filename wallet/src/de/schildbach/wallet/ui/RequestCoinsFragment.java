@@ -45,6 +45,7 @@ import android.content.Loader;
 import android.content.pm.PackageManager;
 import android.database.Cursor;
 import android.graphics.Bitmap;
+import android.graphics.Color;
 import android.net.Uri;
 import android.nfc.NdefMessage;
 import android.nfc.NdefRecord;
@@ -52,6 +53,7 @@ import android.nfc.NfcAdapter;
 import android.nfc.NfcEvent;
 import android.os.Build;
 import android.os.Bundle;
+import android.support.v7.widget.CardView;
 import android.text.SpannableStringBuilder;
 import android.view.LayoutInflater;
 import android.view.Menu;
@@ -183,7 +185,11 @@ public final class RequestCoinsFragment extends Fragment implements NfcAdapter.C
 		final View view = inflater.inflate(R.layout.request_coins_fragment, container, false);
 
 		qrView = (ImageView) view.findViewById(R.id.request_coins_qr);
-		qrView.setOnClickListener(new OnClickListener()
+
+		final CardView qrCardView = (CardView) view.findViewById(R.id.request_coins_qr_card);
+		qrCardView.setCardBackgroundColor(Color.WHITE);
+		qrCardView.setPreventCornerOverlap(false);
+		qrCardView.setOnClickListener(new OnClickListener()
 		{
 			@Override
 			public void onClick(final View v)
@@ -448,11 +454,12 @@ public final class RequestCoinsFragment extends Fragment implements NfcAdapter.C
 	private String determineBitcoinRequestStr(final boolean includeBluetoothMac)
 	{
 		final Coin amount = amountCalculatorLink.getAmount();
+		final String ownName = config.getOwnName();
 
-		final StringBuilder uri = new StringBuilder(BitcoinURI.convertToBitcoinURI(address, amount, null, null));
+		final StringBuilder uri = new StringBuilder(BitcoinURI.convertToBitcoinURI(address, amount, ownName, null));
 		if (includeBluetoothMac && bluetoothMac != null)
 		{
-			uri.append(amount == null ? '?' : '&');
+			uri.append(amount == null && ownName == null ? '?' : '&');
 			uri.append(Bluetooth.MAC_URI_PARAM).append('=').append(bluetoothMac);
 		}
 		return uri.toString();
@@ -463,7 +470,8 @@ public final class RequestCoinsFragment extends Fragment implements NfcAdapter.C
 		final Coin amount = amountCalculatorLink.getAmount();
 		final String paymentUrl = includeBluetoothMac && bluetoothMac != null ? "bt:" + bluetoothMac : null;
 
-		return PaymentProtocol.createPaymentRequest(Constants.NETWORK_PARAMETERS, amount, address, null, paymentUrl, null).build().toByteArray();
+		return PaymentProtocol.createPaymentRequest(Constants.NETWORK_PARAMETERS, amount, address, config.getOwnName(), paymentUrl, null).build()
+				.toByteArray();
 	}
 
 	@Override

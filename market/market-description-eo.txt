@@ -12,7 +12,11 @@ TRAJTOJ:
 • Aplikaĵa fenestraĵo por Bitmona saldo.
 
 Vi povas trovi pli pri Bitmono ĉe
+<<<<<<< HEAD
 http://digitalcoin.co
+=======
+https://bitcoin.org
+>>>>>>> upstream/master
 
 Se vi volas kontribui al Digitalcoin Wallet, la projekto lokas ĉe
 https://github.com/HashEngineering/digitalcoin-wallet

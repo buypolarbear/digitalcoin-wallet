@@ -1,8 +1,14 @@
+<<<<<<< HEAD
 <b>Draag je Digitalcoins altijd bij je, in je broekzak!</b> Je kunt vlot betalen door een QR-code te scannen. Als handelaar ontvang je je betalingen betrouwbaar en onmiddelijk. Digitalcoin Wallet is de eerste mobiele Digitalcoin-app, en misschien wel de veiligste!
+=======
+<b>Draag je Bitcoins altijd bij je, in je broekzak!</b> Je kunt vlot betalen door een QR-code te scannen. Als winkelier ontvang je je betalingen betrouwbaar en onmiddelijk. Bitcoin Wallet is de eerste mobiele Bitcoin-app, en misschien wel de veiligste!
+
+>>>>>>> upstream/master
 
 <b>FEATURES</b>
 
 • Geen registratie, webservice of cloud vereist! De portemonnee is decentraal en peer-to-peer.
+<<<<<<< HEAD
 • Geef het Digitalcoin-bedrag weer in DGC, mDGC en µDGC.
 • Conversie van en naar nationale valuta.
 * Verzend en ontvang Digitalcoin via NFC, QR-codes of Digitalcoin-URL's
@@ -10,6 +16,16 @@
 • Ook offline toch betalen via Bluetooth
 • Systeemmelding wanneer je Digitalcoins ontvangt
 • App widget voor Digitalcoin saldo.
+=======
+• Toon Bitcoin bedrag in BTC, mBTC en µBTC.
+• Conversie van en naar nationale valuta.
+* Verzend en ontvang Bitcoin via NFC, QR-codes of Bitcoin-URL's
+• Adresboek voor regelmatig gebruikte Bitcoin-adressen.
+• Offline kun je nog steeds betalen via Bluetooth.
+• Systeemmelding wanneer je Bitcoins ontvangt
+• Opname van papieren portemonnee (b.v. voor cold storage).
+• App widget voor Bitcoin saldo.
+>>>>>>> upstream/master
 
 
 <b>HELP MEE</b>
@@ -26,7 +42,13 @@ https://www.transifex.com/projects/p/bitcoin-wallet/
 
 <b>TESTIMONIALS</b>
 
+<<<<<<< HEAD
 * Aanbevolen mobiele portemonnee op http://digitalcoin.co
+=======
+* Veel mobiele portemonnees baseren hun code op Bitcoin Wallet. Voorbeelden: blockchain.info, Hive en KnC.
+* Aanbevolen mobiele portemonnee op https://bitcoin.org
+* Aangeraden door BitPay.
+>>>>>>> upstream/master
 
 
 <i>Gebruik op eigen risico!</i>

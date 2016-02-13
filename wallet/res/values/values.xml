@@ -9,6 +9,12 @@
 
 
 	<string-array name="preferences_precision_values">
+
+
+
+
+
+
 		<item>8</item>
 		<item>6</item>
 		<item>4</item>
@@ -24,9 +30,11 @@
 	</string-array>
 	<string-array name="preferences_block_explorer_values">
 		<item>http://dgc.blockr.io/</item>
+		<item>https://chainz.cryptoid.info/dgc/</item>
 	</string-array>
 	<string-array name="preferences_block_explorer_labels">
 		<item>Blockr</item>
+		<item>cryptoID</item>
 	</string-array>
 
 </resources>

@@ -74,6 +74,8 @@ android {
         exclude 'org.bitcoin.production.checkpoints'
         exclude 'org.bitcoin.test.checkpoints'
     }
+
+
 }
 
 // most important part to include .so files into the project

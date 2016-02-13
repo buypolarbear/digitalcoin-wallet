@@ -31,6 +31,7 @@ import android.net.Uri;
 import android.text.format.DateUtils;
 
 import com.google.common.base.Strings;
+import com.hashengineering.website.blockexplorer.BlockExplorers;
 
 import de.schildbach.wallet.ExchangeRatesProvider.ExchangeRate;
 import hashengineering.digitalcoin.wallet.R;
@@ -153,6 +154,17 @@ public class Configuration
 	public Uri getBlockExplorer()
 	{
 		return Uri.parse(prefs.getString(PREFS_KEY_BLOCK_EXPLORER, res.getStringArray(R.array.preferences_block_explorer_values)[0]));
+	}
+
+	public String getPath(String type)
+	{
+		if(type.equals("block/"))
+			return BlockExplorers.defaultExplorers.getExplorer(getBlockExplorer().toString()).getBlockPath();
+		if(type.equals("tx/"))
+			return BlockExplorers.defaultExplorers.getExplorer(getBlockExplorer().toString()).getTxPath();
+		if(type.equals("address/"))
+			return BlockExplorers.defaultExplorers.getExplorer(getBlockExplorer().toString()).getAddressPath();
+		return "";
 	}
 
 	public boolean remindBackup()

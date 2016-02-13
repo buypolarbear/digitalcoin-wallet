@@ -54,6 +54,9 @@ import android.provider.BaseColumns;
 import android.text.format.DateUtils;
 import com.google.common.base.Charsets;
 import com.google.common.base.Strings;
+import com.hashengineering.website.exchange.Exchange;
+import com.hashengineering.website.exchange.ExchangeList;
+
 import de.schildbach.wallet.util.GenericUtils;
 import de.schildbach.wallet.util.Io;
 import org.bitcoinj.core.Coin;
@@ -303,7 +306,7 @@ public class ExchangeRatesProvider extends ContentProvider
 	}
 
 
-    private static Object getCoinValueBTC()
+    private static Object getCoinValueBTC_cryptsy()
     {
 
 
@@ -312,8 +315,8 @@ public class ExchangeRatesProvider extends ContentProvider
         //final Map<String, ExchangeRate> rates = new TreeMap<String, ExchangeRate>();
         // Keep the LTC rate around for a bit
         Double btcRate = 0.0;
-        String currencyCryptsy = CoinDefinition.cryptsyMarketCurrency;
-        String urlCryptsy = "http://pubapi.cryptsy.com/api.php?method=singlemarketdata&marketid="+ CoinDefinition.cryptsyMarketId;
+        String currencyCryptsy = "BTC";
+        String urlCryptsy = "http://pubapi.cryptsy.com/api.php?method=singlemarketdata&marketid=26";
 
 
 
@@ -392,13 +395,127 @@ public class ExchangeRatesProvider extends ContentProvider
         return null;
     }
 
+	private static Object getCoinValueBTC_bittrex()
+	{
+		//final Map<String, ExchangeRate> rates = new TreeMap<String, ExchangeRate>();
+		// Keep the LTC rate around for a bit
+		Double btcRate = 0.0;
+		String currency = "BTC";
+		String url = "https://bittrex.com/api/v1.1/public/getticker?market=btc-dgc";
+
+
+
+
+
+		try {
+			// final String currencyCode = currencies[i];
+			final URL URL_bter = new URL(url);
+			final HttpURLConnection connection = (HttpURLConnection)URL_bter.openConnection();
+			connection.setConnectTimeout(Constants.HTTP_TIMEOUT_MS * 2);
+			connection.setReadTimeout(Constants.HTTP_TIMEOUT_MS * 2);
+			connection.connect();
+
+			final StringBuilder content = new StringBuilder();
+
+			Reader reader = null;
+			try
+			{
+				reader = new InputStreamReader(new BufferedInputStream(connection.getInputStream(), 1024));
+				Io.copy(reader, content);
+				final JSONObject head = new JSONObject(content.toString());
+
+				/*
+				{"success":true,"message":"","result":{"Bid":0.00313794,"Ask":0.00321785,"Last":0.00315893}}
+				}*/
+				String result = head.getString("success");
+				if(result.equals("true"))
+				{
+					JSONObject dataObject = head.getJSONObject("result");
+
+					Double averageTrade = dataObject.getDouble("Last");
+
+
+					if(currency.equalsIgnoreCase("BTC"))
+						btcRate = averageTrade;
+				}
+				return btcRate;
+			}
+			finally
+			{
+				if (reader != null)
+					reader.close();
+			}
+
+		}
+		catch (final IOException x)
+		{
+			x.printStackTrace();
+		}
+		catch (final JSONException x)
+		{
+			x.printStackTrace();
+		}
+
+		return null;
+	}
+
+	private static Exchange.ExchangeRate getCoinValueBTC(Exchange exchange)
+	{
+		//final Map<String, ExchangeRate> rates = new TreeMap<String, ExchangeRate>();
+		// Keep the LTC rate around for a bit
+		Double btcRate = 0.0;
+		String currency = "BTC";
+		String url = exchange.getFullUrl();
+
+		try {
+			// final String currencyCode = currencies[i];
+			long start = System.currentTimeMillis();
+			final URL URL_bter = new URL(url);
+			final HttpURLConnection connection = (HttpURLConnection)URL_bter.openConnection();
+			connection.setConnectTimeout(Constants.HTTP_TIMEOUT_MS * 2);
+			connection.setReadTimeout(Constants.HTTP_TIMEOUT_MS * 2);
+			connection.connect();
+
+			final StringBuilder content = new StringBuilder();
+
+			Reader reader = null;
+			try
+			{
+				reader = new InputStreamReader(new BufferedInputStream(connection.getInputStream(), 1024));
+				long length = Io.copy(reader, content);
+
+				log.info("fetched exchange rates from {}, {} chars, took {} ms", url, length, System.currentTimeMillis()
+						- start);
+				final JSONObject head = new JSONObject(content.toString());
+
+				return exchange.getRate(head);
+			}
+			finally
+			{
+				if (reader != null)
+					reader.close();
+			}
+
+		}
+		catch (final IOException x)
+		{
+			x.printStackTrace();
+		}
+		catch (final JSONException x)
+		{
+			x.printStackTrace();
+		}
+		log.info("failed to fetch exchange rates from {}, {} chars, took {} ms", url);
+		return exchange.getFailedExchangeRate();
+	}
+
     private static Object getCoinValueBTC_BTER()
     {
         //final Map<String, ExchangeRate> rates = new TreeMap<String, ExchangeRate>();
         // Keep the LTC rate around for a bit
         Double btcRate = 0.0;
-        String currency = CoinDefinition.cryptsyMarketCurrency;
-        String url = "http://data.bter.com/api/1/ticker/"+ CoinDefinition.coinTicker.toLowerCase() + "_" + CoinDefinition.cryptsyMarketCurrency.toLowerCase();
+        String currency = "BTC";
+        String url = "http://data.bter.com/api/1/ticker/"+ CoinDefinition.coinTicker.toLowerCase() + "_" + currency;
 
 
 
@@ -461,10 +578,18 @@ public class ExchangeRatesProvider extends ContentProvider
 
 		try
 		{
+			Exchange.ExchangeRate xrate = null;
+			for(Exchange exchange : ExchangeList.defaultExchanges)
+			{
+				xrate = getCoinValueBTC(exchange);
 
-            Double btcRate = 0.0;
+				if(xrate.isSuccessful()) {
+					break;
+				}
+			}
+            /*Double btcRate = 0.0;
             boolean cryptsyValue = true;
-            Object result = getCoinValueBTC();
+            Object result = getCoinValueBTC_bittrex();
 
             if(result == null)
             {
@@ -472,9 +597,12 @@ public class ExchangeRatesProvider extends ContentProvider
                 cryptsyValue = false;
                 if(result == null)
                     return null;
-            }
+            }*/
 
-            btcRate = (Double)result;
+			if(xrate == null || xrate.isSuccessful() == false)
+				return null;
+
+            Double btcRate = (Double)xrate.getDouble();
 
 
 			connection = (HttpURLConnection) url.openConnection();

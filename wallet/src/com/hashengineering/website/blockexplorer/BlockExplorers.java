@@ -1,4 +1,6 @@
-package blockexplorer;
+package com.hashengineering.website.blockexplorer;
+
+import org.bitcoinj.core.CoinDefinition;
 
 import java.util.HashMap;
 import java.util.Map;
@@ -31,5 +33,13 @@ public class BlockExplorers {
     public String getUnspentUrl(String url, String address)
     {
         return explorers.get(url).getUnspentUrl(address);
+    }
+
+    static public BlockExplorers defaultExplorers;
+
+    static {
+        defaultExplorers = new BlockExplorers();
+        defaultExplorers.add(new Blockr(CoinDefinition.coinTicker));
+        defaultExplorers.add(new CryptoIDExplorer(CoinDefinition.coinTicker));
     }
 }

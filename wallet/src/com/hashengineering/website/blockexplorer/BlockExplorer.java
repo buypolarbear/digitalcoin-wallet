@@ -1,10 +1,11 @@
-package blockexplorer;
+package com.hashengineering.website.blockexplorer;
+
+import com.hashengineering.website.Website;
 
 /**
  * Created by Hash Engineering on 1/21/2016.
  */
-public class BlockExplorer {
-    String url;
+public class BlockExplorer extends Website{
     String pathForBlock;
     String pathForTx;
     String pathForAddress;
@@ -21,7 +22,7 @@ public class BlockExplorer {
 
     public BlockExplorer(String url, String pathForBlock, String pathForTx, String pathForAddress)
     {
-        this.url = url;
+        super(url);
         this.pathForAddress = pathForAddress;
         this.pathForTx = pathForTx;
         this.pathForBlock = pathForBlock;
@@ -29,16 +30,11 @@ public class BlockExplorer {
 
     public BlockExplorer(String url, String pathForBlock, String pathForTx, String pathForAddress, String pathForUnspent)
     {
-        this.url = url;
+        super(url);
         this.pathForAddress = pathForAddress;
         this.pathForTx = pathForTx;
         this.pathForBlock = pathForBlock;
         this.pathForUnspent = pathForUnspent;
-    }
-
-    public String getUrl()
-    {
-        return url;
     }
 
     public String getBlockUrl()
@@ -59,6 +55,26 @@ public class BlockExplorer {
     public String getUnspentUrl(String address)
     {
         return url + pathForUnspent + address;
+    }
+
+    public String getBlockPath()
+    {
+        return pathForBlock;
+    }
+
+    public String getTxPath()
+    {
+        return pathForTx;
+    }
+
+    public String getAddressPath()
+    {
+        return pathForAddress;
+    }
+
+    public String getUnspentPath(String address)
+    {
+        return pathForUnspent + address;
     }
 
 }

@@ -1,5 +1,8 @@
 digitalcoin Wallet
 -----------------
+v3.01.4460
+* Upgraded to Bitcoin Wallet 4.46
+
 v3.01.4230
 * Upgraged to Bitcoin Wallet 4.23
 
@@ -164,7 +167,7 @@ v4.32
 
 * Bugfixes.
 * In-app payments integration (integration-android) now available on Maven Central and jCenter.
-  Also see: https://github.com/schildbach/bitcoin-wallet/wiki/InAppPayments
+  Also see: https://github.com/hashengineering/digitalcoin-wallet/wiki/InAppPayments
 
 v4.31
 

@@ -29,7 +29,7 @@ import android.util.AttributeSet;
 import android.widget.TextView;
 import de.schildbach.wallet.Constants;
 import de.schildbach.wallet.util.MonetarySpannable;
-import hashengineering.digitalcoin.wallet.R;
+import de.schildbach.wallet_test.R;
 
 
 /**

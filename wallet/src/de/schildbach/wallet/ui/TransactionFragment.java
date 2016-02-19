@@ -36,7 +36,7 @@ import de.schildbach.wallet.util.AbstractClipboardManager;
 import de.schildbach.wallet.util.Base43;
 import de.schildbach.wallet.util.BitmapFragment;
 import de.schildbach.wallet.util.Qr;
-import hashengineering.digitalcoin.wallet.R;
+import de.schildbach.wallet_test.R;
 import org.bitcoinj.core.*;
 
 import java.io.ByteArrayOutputStream;

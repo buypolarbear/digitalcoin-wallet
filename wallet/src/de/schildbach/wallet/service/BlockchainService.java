@@ -21,7 +21,7 @@ import java.util.List;
 
 import javax.annotation.Nullable;
 
-import hashengineering.digitalcoin.wallet.R;
+import de.schildbach.wallet_test.R;
 import org.bitcoinj.core.Peer;
 import org.bitcoinj.core.StoredBlock;
 

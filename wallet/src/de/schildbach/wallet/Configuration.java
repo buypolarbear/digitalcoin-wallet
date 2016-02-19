@@ -34,7 +34,7 @@ import com.google.common.base.Strings;
 import com.hashengineering.website.blockexplorer.BlockExplorers;
 
 import de.schildbach.wallet.ExchangeRatesProvider.ExchangeRate;
-import hashengineering.digitalcoin.wallet.R;
+import de.schildbach.wallet_test.R;
 
 /**
  * @author Andreas Schildbach

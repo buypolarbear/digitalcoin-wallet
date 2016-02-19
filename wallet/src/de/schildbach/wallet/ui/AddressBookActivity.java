@@ -40,7 +40,7 @@ import android.view.ViewGroup;
 import com.google.common.collect.Iterables;
 import de.schildbach.wallet.Constants;
 import de.schildbach.wallet.util.ViewPagerTabs;
-import hashengineering.digitalcoin.wallet.R;
+import de.schildbach.wallet_test.R;
 import org.bitcoinj.core.Address;
 import org.bitcoinj.core.ECKey;
 import org.bitcoinj.core.Wallet;

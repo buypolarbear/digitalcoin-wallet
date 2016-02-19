@@ -47,7 +47,7 @@ import de.schildbach.wallet.WalletApplication;
 import de.schildbach.wallet.util.Crypto;
 
 import de.schildbach.wallet.util.Io;
-import hashengineering.digitalcoin.wallet.R;
+import de.schildbach.wallet_test.R;
 import de.schildbach.wallet.util.WalletUtils;
 
 /**

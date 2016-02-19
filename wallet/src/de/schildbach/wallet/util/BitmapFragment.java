@@ -32,7 +32,7 @@ import android.view.View;
 import android.view.View.OnClickListener;
 import android.view.Window;
 import android.widget.ImageView;
-import hashengineering.digitalcoin.wallet.R;
+import de.schildbach.wallet_test.R;
 import android.widget.TextView;
 
 /**

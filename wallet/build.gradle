@@ -27,7 +27,7 @@ dependencies {
 }
 
 ext {
-    archivesBaseName = 'bitcoin-wallet'
+    archivesBaseName = 'digitalcoin-wallet'
 }
 
 android {
@@ -75,6 +75,17 @@ android {
         exclude 'org.bitcoin.test.checkpoints'
     }
 
+    defaultConfig {
+        applicationId "hashengineering.digitalcoin.wallet"
+    }
+    productFlavors {
+        prod {
+            applicationId = "hashengineering.digitalcoin.wallet"
+        }
+        _testnet {
+            applicationId = "hashengineering.digitalcoin.wallet_test"
+        }
+    }
 
 }
 

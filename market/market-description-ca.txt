@@ -1,33 +1,16 @@
-<<<<<<< HEAD
-<b>Tingues els teus Digitalcoins sempre amb tu, a la teva butxaca!.<b> Per pagar ràpidament escanejant un codi QR. Com a comerciant, pots rebre pagaments amb confiança i instantàniament. La Cartera Digitalcoin es la primera aplicació mòbil de Digitalcoin i possiblement també la més segura!.
-=======
-<b>Tingues els teus Bitcoins sempre amb tu, a la teva butxaca!.<b> Per pagar ràpidament escanejant un codi QR. Com a comerciant, pots rebre pagaments instantàniament amb confiança. La Cartera Bitcoin és la primera aplicació mòbil de Bitcoin i possiblement també la més segura!.
->>>>>>> upstream/master
-
+<b>Tingues els teus Digitalcoins sempre amb tu, a la teva butxaca!.<b> Per pagar ràpidament escanejant un codi QR. Com a comerciant, pots rebre pagaments instantàniament amb confiança. La Cartera Digitalcoin és la primera aplicació mòbil de Digitalcoin i possiblement també la més segura!.
 
 <b>CARACTERÍSTIQUES</b>
 
-<<<<<<< HEAD
-• Sense enregistrar-se, ni necessitat de servici web o nuvol!. Aquesta cartera és descentralitzada i de parell a parell.
-• Mostra l'import de Digitalcoin en BTC, mBTC i µBTC.
-• Conversió cap a i des de divises nacionals.
-• Enviar i rebre Digitalcoins a través d'NFC, codis QR i adreces Digitalcoin.
-• Llibreta d'adreces per a les adreces utilitzades regularment.
-• Quan ets fora de línia, encara pots pagar a través de Bluetooth.
-• Notificació del sistema quan reps monedes.
-• Possibilitat d'agregar carteres de paper (per ex. les utilitzades per emmagatzematge en fred)
-• Widget d'aplicació per al balanç de Digitalcoin.
-=======
 • Sense enregistrar-se ni amb necessitat d'un servei web o al núvol!. Aquesta cartera és descentralitzada i de parell a parell.
-• Mostra l'import de bitcoin en BTC, mBTC i µBTC.
+• Mostra l'import de digitalcoin en BTC, mBTC i µBTC.
 • Conversió cap a i des de divises nacionals.
-• Enviar i rebre bitcoins a través d'NFC, codis QR i adreces Bitcoin.
+• Enviar i rebre digitalcoins a través d'NFC, codis QR i adreces Digitalcoin.
 • Llibreta d'adreces per a les adreces utilitzades regularment.
 • Quan ets fora de línia, encara pots pagar a través de Bluetooth.
 • Notificació del sistema quan reps monedes.
 • Possibilitat d'agregar carteres de paper (per ex. les utilitzades per l'emmagatzematge en fred)
-• Widget d'aplicació per al balanç de Bitcoin.
->>>>>>> upstream/master
+• Widget d'aplicació per al balanç de Digitalcoin.
 
 
 <b>COL·LABORAR</b>
@@ -44,13 +27,7 @@ https://www.transifex.com/projects/p/bitcoin-wallet/
 
 <b>TESTIMONIS</b>
 
-<<<<<<< HEAD
-• Moltes carters mòbils basen el seu codi en la Cartera Digitalcoin. Exemples: blockchain.info, Hive i KnC.
-=======
-• Moltes carteres mòbils basen el seu codi en la Cartera Bitcoin. Exemples: blockchain.info, Hive i KnC.
->>>>>>> upstream/master
-• Cartera mòbil recomanada per https://bitcoin.org
-• Recomanada per BitPay.
+• Cartera mòbil recomanada per http://digitalcoin.co
 
 
 <i>Utilitza-la sota la teva responsabilitat!</i>

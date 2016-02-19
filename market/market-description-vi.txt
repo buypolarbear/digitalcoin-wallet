@@ -10,13 +10,8 @@ TÍNH NĂNG:
 • Thông báo trong hệ thống theo tính nhanh gọn về số lượng Digitalcoin nhận và gửi đi.
 • Tiện ích dành riêng cho Digitalcoin.
 
-<<<<<<< HEAD
 Bạn có thể tìm hiểu thêm về Digitalcoin tại
 http://digitalcoin.co
-=======
-Bạn có thể tìm hiểu thêm về Bitcoin tại
-https://bitcoin.org
->>>>>>> upstream/master
 
 Nếu bạn có ý tưởng đóng góp cho Digitalcoin Wallet, hãy truy cập vào trang web
 https://github.com/HashEngineering/digitalcoin-wallet

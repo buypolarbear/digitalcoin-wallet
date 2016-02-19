@@ -24,9 +24,9 @@
   <string name="exchange_rates_fragment_source">Çmimi nga %s</string>
   <string name="exchange_rates_options_search">Kërko kursin e këmbimit</string>
   <string name="exchange_rates_context_set_as_default_title">Vëndoseni si valutë të huaj të rëndomtë</string>
-  <string name="wallet_transactions_fragment_empty_text_received">Nuk keni pranuar asnjë Bitcoin deri më tani</string>
-  <string name="wallet_transactions_fragment_empty_text_sent">Nuk keni dërguar asnjë Bitcoin deri me tani</string>
-  <string name="wallet_transactions_fragment_empty_text_howto">Si të merrni Bitcoins?\n\nKëmbeni me para tradicionale,\shitni gjëra apo shërbime ose\nfito duke punuar.</string>
+  <string name="wallet_transactions_fragment_empty_text_received">Nuk keni pranuar asnjë Digitalcoin deri më tani</string>
+  <string name="wallet_transactions_fragment_empty_text_sent">Nuk keni dërguar asnjë Digitalcoin deri me tani</string>
+  <string name="wallet_transactions_fragment_empty_text_howto">Si të merrni Digitalcoins?\n\nKëmbeni me para tradicionale,\shitni gjëra apo shërbime ose\nfito duke punuar.</string>
   <string name="wallet_transactions_row_warning_backup">Urime, ju sapo keni pranuar pagesën e parë! E keni &lt;u&gt;ruajtur një kopje rezervë të kuletës suaj tashmë, për ta mbrojutur ne rast humbjeje? </string>
   <string name="wallet_transactions_fragment_coinbase">të minuara</string>
   <string name="wallet_transactions_fragment_internal">interne</string>
@@ -51,8 +51,8 @@
   <string name="wallet_version_dialog_button_market">Google Play</string>
   <string name="wallet_version_dialog_button_binary">Shkarkoni</string>
   <string name="wallet_old_sdk_dialog_title">Versioni i Androidit nuk është aktual</string>
-  <string name="wallet_old_sdk_dialog_message">Mundësit janë që në verzionet e ardhshme të Bitcoin Wallet nuk do të mbështes paisjen tuaj. Në disa raste, mund të jetë e vështir që të shpenzohen monedhat në këtë paisje.\n\nVetëm në rast se dini cfarë po bëni, është e rekomanduar që të zhvendosni monedhat tuaja në një kulet tjetër.</string>
-  <string name="send_coins_activity_title">Dërgo Bitcoins</string>
+  <string name="wallet_old_sdk_dialog_message">Mundësit janë që në verzionet e ardhshme të Digitalcoin Wallet nuk do të mbështes paisjen tuaj. Në disa raste, mund të jetë e vështir që të shpenzohen monedhat në këtë paisje.\n\nVetëm në rast se dini cfarë po bëni, është e rekomanduar që të zhvendosni monedhat tuaja në një kulet tjetër.</string>
+  <string name="send_coins_activity_title">Dërgo Digitalcoins</string>
   <string name="send_coins_fragment_request_payment_request_progress">Duke marrë firmat nga %s…</string>
   <string name="send_coins_fragment_request_payment_request_failed_title">Marrja e firmës dështoj</string>
   <string name="send_coins_fragment_request_payment_request_wrong_signature">Nënshkrim i gabuar!</string>
@@ -60,7 +60,7 @@
   <string name="send_coins_fragment_payee_verified_by_unknown">panjohur</string>
   <string name="send_coins_fragment_receiving_address_label">Paguani tek</string>
   <string name="send_coins_fragment_receiving_address_hint">shënoni adresën ose emrin</string>
-  <string name="send_coins_fragment_receiving_address_error">Adresa e Bitcoin e gabuar!</string>
+  <string name="send_coins_fragment_receiving_address_error">Adresa e Digitalcoin e gabuar!</string>
   <string name="send_coins_fragment_receiving_address_own">Jeni duke dërguar te vetëvetja!</string>
   <string name="send_coins_fragment_receiving_address_complex">kompleks\nadresa</string>
   <string name="send_coins_fragment_pending">(%s pret konfirmimin)</string>
@@ -175,8 +175,8 @@
   <string name="export_keys_dialog_success"><![CDATA[<p>Kopja rezervë e kuletës suaj ndodhet në <tt>%s</tt></p><p>Nëse pajisja juaj ka një kartelë SD që hiqet, kopja juaj rezervë <i>duhet</i> të jetë në alë kartelë. Heq atë dhe ruaje atë në një vend të sigurtë. Nëse kartela <i>nuk</i> hiqet nga telefoni, duhet ta arkivoni kopjen rezervë në një vend tjetër jo në telefonin tuaj.</p><p><b>Nëse i vetmi vend që kopja juaj rezervë është në pajisjen tuaj, jeni në rrezik që të humbisni të dyjat në të njejtën kohë!</b></p><p>Për çdo rast sigurohuni që mbani në mend fjalëkalimin e kopjes rezervë. Doni ta arkivoni kuletën tuaj tani?</p>]]></string>
   <string name="export_keys_dialog_failure">Kuleta juaj nuk mund të krijohet njê kopje rezervë.</string>
   <string name="export_keys_dialog_button_archive">Arkivi</string>
-  <string name="export_keys_dialog_mail_subject">Kopja rezervë e Bitcoin kuletës</string>
-  <string name="export_keys_dialog_mail_text">Skedari i bashkangjitur përmban çelësat privat të Bitcoin dhe duhet të ruhet sigurt gjatë gjithë kohës. Mos harroni fjalëkalimin e enkriptimit!</string>
+  <string name="export_keys_dialog_mail_subject">Kopja rezervë e Digitalcoin kuletës</string>
+  <string name="export_keys_dialog_mail_text">Skedari i bashkangjitur përmban çelësat privat të Digitalcoin dhe duhet të ruhet sigurt gjatë gjithë kohës. Mos harroni fjalëkalimin e enkriptimit!</string>
   <string name="export_keys_dialog_mail_intent_chooser">Duke arkivuar kuletën duke përdorur…</string>
   <string name="export_keys_dialog_mail_intent_failed">Arkivimi i kuletës dështoj</string>
   <string name="import_export_keys_dialog_password">fjalëkalimi</string>
@@ -202,7 +202,7 @@
   <string name="input_parser_io_error">Nuk mund të lexojë: \n%s</string>
   <string name="input_parser_cannot_classify">Nuk mund të njoh hyrjen:\n%s</string>
   <string name="input_parser_invalid_bitcoin_uri">Jovalid Digitalcoin URI:\n%s</string>
-  <string name="input_parser_invalid_address">Bitcoin adresë jovalide!\(Keni ngatërruar mainnet/testnet?)</string>
+  <string name="input_parser_invalid_address">Digitalcoin adresë jovalide!\(Keni ngatërruar mainnet/testnet?)</string>
   <string name="input_parser_unverifyable_paymentrequest">Nuk mund të verifikohet kërkesa për pages:\n%s</string>
   <string name="input_parser_invalid_paymentrequest">Kërkes jo valide për pages:\n%s</string>
   <string name="input_parser_invalid_transaction">Transaksion jo valid:\n%s</string>

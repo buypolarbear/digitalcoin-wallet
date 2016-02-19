@@ -11,13 +11,8 @@ FUNKCIE:
 • Notifikácie v stavovej lište pri prijatí Digitalcoinov.
 • Widget s celkovým zostatkom.
 
-<<<<<<< HEAD
 Viac informácií o Digitalcoine
 http://digitalcoin.co
-=======
-Viac informácií o Bitcoine
-https://bitcoin.org
->>>>>>> upstream/master
 
 Ak chcete prispieť do projektu Digitalcoin Wallet nájdete ho na adrese
 https://github.com/HashEngineering/digitalcoin-wallet

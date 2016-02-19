@@ -9,7 +9,7 @@
 • QR kodları, Digitalcoin bağlantıları ve yakın alan iletişimi ile Digitalcoin alımı ve gönderilmesi.
 • Sık kullanılan Digitalcoin adresleri için adres defteri içerir.
 • Çevrimdışı olduğunuzda Bluetooth vasıtasıyla ödemeler.
-• Alınan bitcoin'ler için sistem bildirimleri.
+• Alınan digitalcoin'ler için sistem bildirimleri.
 • Kağıt cüzdanların taranması (mesela soğuk depolama için kullanılanlar).
 • Digitalcoin bakiyesini görüntüleyen widget.
 

@@ -11,7 +11,7 @@
   <string name="blockchain_state_progress_stalled">Synchronisation interrompue</string>
   <string name="blockchain_state_progress_problem_storage">Synchronisation : problème de stockage</string>
   <string name="blockchain_state_progress_problem_network">Synchronisation : problème de réseau</string>
-  <string name="wallet_address_fragment_clipboard_msg">Adresse Bitcoin copiée dans le presse-papiers</string>
+  <string name="wallet_address_fragment_clipboard_msg">Adresse Digitalcoin copiée dans le presse-papiers</string>
   <string name="wallet_address_dialog_fragment_hint">Par souci de confidentialité, votre adresse changera après avoir reçu un paiement.</string>
   <string name="wallet_balance_fragment_too_much">Ce montant est plutôt élevé pour être gardé dans votre poche, veuillez en déplacer un peu dans un endroit plus sûr.</string>
   <string name="wallet_balance_fragment_replaying">Le solde n\'est pas disponible durant la relecture.</string>
@@ -24,9 +24,9 @@
   <string name="exchange_rates_fragment_source">Prix de %s</string>
   <string name="exchange_rates_options_search">Chercher le taux de change</string>
   <string name="exchange_rates_context_set_as_default_title">Définir comme devise étrangère par défaut</string>
-  <string name="wallet_transactions_fragment_empty_text_received">Aucun bitcoin reçu jusqu\'à présent</string>
-  <string name="wallet_transactions_fragment_empty_text_sent">Aucun bitcoin envoyé jusqu\'à présent</string>
-  <string name="wallet_transactions_fragment_empty_text_howto">Comment obtenir des bitcoins ?\n\nÉchangez-en contre de l\'argent traditionnel,\nvendez des biens ou des services ou\ngagnez-en en travaillant.</string>
+  <string name="wallet_transactions_fragment_empty_text_received">Aucun digitalcoin reçu jusqu\'à présent</string>
+  <string name="wallet_transactions_fragment_empty_text_sent">Aucun digitalcoin envoyé jusqu\'à présent</string>
+  <string name="wallet_transactions_fragment_empty_text_howto">Comment obtenir des digitalcoins ?\n\nÉchangez-en contre de l\'argent traditionnel,\nvendez des biens ou des services ou\ngagnez-en en travaillant.</string>
   <string name="wallet_transactions_row_warning_backup">Félicitations, vous avez reçu votre premier paiement ! Avez-vous déjà &lt;u&gt;sauvegardé votre portefeuille&lt;/u&gt; afin de vous protéger contre une perte ?</string>
   <string name="wallet_transactions_fragment_coinbase">miné</string>
   <string name="wallet_transactions_fragment_internal">Interne</string>
@@ -60,7 +60,7 @@
   <string name="send_coins_fragment_payee_verified_by_unknown">inconnu</string>
   <string name="send_coins_fragment_receiving_address_label">Payer à</string>
   <string name="send_coins_fragment_receiving_address_hint">saisir l\'adresse ou le nom</string>
-  <string name="send_coins_fragment_receiving_address_error">Adresse Bitcoin invalide !</string>
+  <string name="send_coins_fragment_receiving_address_error">Adresse Digitalcoin invalide !</string>
   <string name="send_coins_fragment_receiving_address_own">Vous êtes sur le point d\'envoyer à vous-même !</string>
   <string name="send_coins_fragment_receiving_address_complex">adresse\ncomplexe</string>
   <string name="send_coins_fragment_pending">(%s en attente de confirmation)</string>
@@ -142,7 +142,7 @@
   <string name="address_book_options_scan_title">Numériser l\'adresse</string>
   <string name="address_book_options_scan_invalid">Les données numérisées ne peuvent pas être reconnues</string>
   <string name="address_book_options_scan_own_address">L\'adresse numérisée est la vôtre.</string>
-  <string name="address_book_row_message_compromised_key">Cette adresse peut-être compromise. Vous ne devriez plus l\'utiliser pour recevoir des bitcoins.</string>
+  <string name="address_book_row_message_compromised_key">Cette adresse peut-être compromise. Vous ne devriez plus l\'utiliser pour recevoir des digitalcoins.</string>
   <string name="edit_address_book_entry_dialog_title_add">Ajouter une adresse d\'envoi</string>
   <string name="edit_address_book_entry_dialog_title_edit">Modifier l\'étiquette de l\'adresse d\'envoi</string>
   <string name="edit_address_book_entry_dialog_title_add_receive">Ajouter une étiquette à l\'adresse</string>
@@ -186,8 +186,8 @@
   <string name="export_keys_dialog_success"><![CDATA[<p>Votre portefeuille a été sauvegardé vers <tt>%s</tt></p><p>Si votre appareil a une carte SD amovible, votre sauvegarde <i>devrait</i> être sur cette carte. Enlevez-la et conservez-la dans un endroit sûr. Si la carte n\'est <i>pas</i> amovible, vous devez archiver votre sauvegarde dans un endroit autre que votre appareil.</p><p><b>Si votre sauvegarde existe seulement sur votre appareil, vous courez le risque de perdre les deux en même temps !</b></p><p>Dans tous les cas, assurez-vous de vous souvenir du mot de passe de votre sauvegarde. Voulez-vous archiver votre portefeuille maintenant ?</p>]]></string>
   <string name="export_keys_dialog_failure">Votre portefeuille n\'a pas pu être exporté :\n%s</string>
   <string name="export_keys_dialog_button_archive">Archiver</string>
-  <string name="export_keys_dialog_mail_subject">Sauvegarde du portefeuille Bitcoin</string>
-  <string name="export_keys_dialog_mail_text">Le fichier chiffré attaché contient des clés privées Bitcoin et doit être conservé en lieu sûr en tout temps. N\'oubliez pas le mot de passe de chiffrement !</string>
+  <string name="export_keys_dialog_mail_subject">Sauvegarde du portefeuille Digitalcoin</string>
+  <string name="export_keys_dialog_mail_text">Le fichier chiffré attaché contient des clés privées Digitalcoin et doit être conservé en lieu sûr en tout temps. N\'oubliez pas le mot de passe de chiffrement !</string>
   <string name="export_keys_dialog_mail_intent_chooser">Archiver le portefeuille en utilisant…</string>
   <string name="export_keys_dialog_mail_intent_failed">Échec lors de l\'archivage du portefeuille.</string>
   <string name="import_export_keys_dialog_password">mot de passe</string>

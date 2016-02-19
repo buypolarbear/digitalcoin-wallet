@@ -3,13 +3,8 @@
   <string name="help_wallet">
 <![CDATA[
 		<p>
-<<<<<<< HEAD
-			Den øvre venstre delen av skjermen viser balansen i digitalcoins og en valgt nasjonal valuta.
-			Trykk for å gå til listen over nasjonale valutaer, og trykk på en av valutaene for å velge den som standard.
-=======
-			Den øvre venstre delen av skjermen viser balansen i bitcoin og en valgt nasjonal valuta.
+			Den øvre venstre delen av skjermen viser balansen i digitalcoin og en valgt nasjonal valuta.
 			Trykk for å gå til listen over nasjonale valutaer, og trykk så på en av valutaene for å velge den som standard.
->>>>>>> upstream/master
 		</p>
 		<p>
 			QR-koden til høyre inneholder din Digitalcoin-adresse og kan brukes til skanning av noen andre.

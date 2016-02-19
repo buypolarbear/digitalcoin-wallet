@@ -1,7 +1,7 @@
 <<<<<<< HEAD
 Tartsd a zsebedben Digitalcoinjaidat! Egyszerűen, akár QR-kód leolvasásával is fizethetsz. Ha pedig termékeket, vagy szolgáltatást értékesítesz megbízható módon és gyorsan juthatsz a bevételeidhez. A Digitalcoin Tárca az első Digitalcoin app és kétségkívül a legbiztonságosabb is!
 =======
-<b>Mindig legyenek nálad a Bitcoin-jaid a zsebedben!</b> Úgy tudsz fizetni, hogy gyorsan beolvasol egy QR kódot. Kereskedőként megkapod a fizetséget megbízhatóan és azonnal. A Bitcoin Wallet az első mobil Bitcoin alkalmazás és vitathatatlanul a legbiztonságosabb is!
+<b>Mindig legyenek nálad a Digitalcoin-jaid a zsebedben!</b> Úgy tudsz fizetni, hogy gyorsan beolvasol egy QR kódot. Kereskedőként megkapod a fizetséget megbízhatóan és azonnal. A Digitalcoin Wallet az első mobil Digitalcoin alkalmazás és vitathatatlanul a legbiztonságosabb is!
 >>>>>>> upstream/master
 
 
@@ -26,23 +26,23 @@ https://github.com/HashEngineering/digitalcoin-wallet
 
 
 =======
-• Bitcoin összeg megjelenítési módok: BTC, mBTC és µBTC.
+• Digitalcoin összeg megjelenítési módok: BTC, mBTC és µBTC.
 • Átváltás a saját valutádra, oda-vissza.
-• Bitcoin küldés és fogadás NFC-n, QR kódokon vagy Bitcoin URL-eken keresztül.
-• Címtár a rendszeresen használt Bitcoin címek számára.
+• Digitalcoin küldés és fogadás NFC-n, QR kódokon vagy Digitalcoin URL-eken keresztül.
+• Címtár a rendszeresen használt Digitalcoin címek számára.
 • Offline állapotban is fizethetsz - Bluetooth segítségével.
-• Rendszerüzenet Bitcoin érkezésekor.
+• Rendszerüzenet Digitalcoin érkezésekor.
 • Papírtárcák besöprése (pl. amik hűtőháznak vannak használva).
-• Widget a Bitcoin egyenlegről.
+• Widget a Digitalcoin egyenlegről.
 
 
 <b>HOZZÁJÁRULÁS</b>
 
-A Bitcoin Wallet <b>nyílt forráskódú</b> és <b>ingyenes szoftver</b>. Licenc: GPLv3
+A Digitalcoin Wallet <b>nyílt forráskódú</b> és <b>ingyenes szoftver</b>. Licenc: GPLv3
 https://www.gnu.org/licenses/gpl-3.0.en.html
 
 A forráskódunk elérhető a GitHub-on:
-https://github.com/schildbach/bitcoin-wallet
+https://github.com/hashengineering/digitalcoin-wallet
 >>>>>>> upstream/master
 
 Minden fordítást a Transifex kezelt:
@@ -51,9 +51,8 @@ https://www.transifex.com/projects/p/bitcoin-wallet/
 
 <b>AJÁNLÓLEVELEK</b>
 
-• Sok mobiltárca a Bitcoin Wallet-re alapozza a kódját. Például: blockchain.info, Hive és KnC.
-• Ajánlott mobiltárca a https://bitcoin.org által
-• Ajánlva a BitPay által.
+• Ajánlott mobiltárca a http://digitalcoin.co által
+
 
 
 <i>Saját felelősségedre használd!</i>

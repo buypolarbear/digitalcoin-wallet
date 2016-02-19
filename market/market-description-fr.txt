@@ -1,30 +1,22 @@
-<<<<<<< HEAD
-﻿<b>Ayez vos Digitalcoins toujours avec vous dans votre poche !<b> Payez rapidement en balayant un code QR. En tant que marchant, vous recevez les paiements de manière fiable et instantanée. Digitalcoin Wallet est la première appli Digitalcoin mobile et sans doute aussi la plus sécuritaire !
-=======
-<b>Ayez vos bitcoins toujours avec vous dans votre poche !<b> Payez rapidement en numérisant un code QR. En tant que marchand, vous recevez les paiements de manière fiable et instantanée. Bitcoin Wallet est la première appli Bitcoin mobile et sans doute aussi la plus sûre !
->>>>>>> upstream/master
+<b>Ayez vos digitalcoins toujours avec vous dans votre poche !<b> Payez rapidement en numérisant un code QR. En tant que marchand, vous recevez les paiements de manière fiable et instantanée. Digitalcoin Wallet est la première appli Digitalcoin mobile et sans doute aussi la plus sûre !
 
 
 <b>CARACTÉRISTIQUES</b>
 
 • Pas d'inscription, de service Web ou de nuage de nécessaire ! Ce portefeuille est décentralisé et de pair-à-pair.
-• Affichage du montant de bitcoins en DGC, mDGC et µDGC.
+• Affichage du montant de digitalcoins en DGC, mDGC et µDGC.
 • Conversion vers et depuis des devises nationales.
-• Envoi et réception de bitcoins par NFC, codes QR ou URL Digitalcoin
+• Envoi et réception de digitalcoins par NFC, codes QR ou URL Digitalcoin
 • Carnet d'adresses pour les adresses Digitalcoin utilisées régulièrement.
 • Quand vous êtes hors-ligne vous pouvez quand même payez via Bluetooth.
 • Notification du système pour les pièces reçues.
 • Balayage de portefeuilles papier (c.-à-d. ceux utilisés pour le stockage à froid).
-• Widget applicatif pour le solde en bitcoin.
+• Widget applicatif pour le solde en digitalcoin.
 
 
 <b>CONTRIBUER</b>
 
-<<<<<<< HEAD
-Digitalcoin Wallet est un <b>logiciel à code source libre</b> et <b>ouvert</b>. Licence : GPLv3
-=======
-Bitcoin Wallet est un <b>logiciel à code source ouvert</b> et <b>libre</b>. Licence : GPLv3
->>>>>>> upstream/master
+Digitalcoin Wallet est un <b>logiciel à code source ouvert</b> et <b>libre</b>. Licence : GPLv3
 https://www.gnu.org/licenses/gpl-3.0.fr.html
 
 Notre code source est proposée sur GutHub :

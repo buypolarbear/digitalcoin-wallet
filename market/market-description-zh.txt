@@ -28,9 +28,7 @@ https://www.transifex.com/projects/p/bitcoin-wallet/
 
 <b>评价</b>
 
-• 很多的移动钱包应用程序都基于 Digitalcoin Wallet，比如：blockchain.info, Hive 以及 KnC.
-• 由 https://bitcoin.org 推荐的移动钱包。
-• 由 BitPay 推荐的移动钱包。
+• 由 http://digitalcoin.co 推荐的移动钱包。
 
 
 <i>您需要自担风险！</i>

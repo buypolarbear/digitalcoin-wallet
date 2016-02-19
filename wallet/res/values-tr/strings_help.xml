@@ -3,19 +3,11 @@
   <string name="help_wallet">
 <![CDATA[
 		<p>
-<<<<<<< HEAD
-			Ekranın sol üst köşesi bakiyenizi Digitalcoin olarak ve seçilen bir para biriminde gösterir.
-			Milli para birimleri listesine gitmek için dokununuz ve ardından herhangi bir para birimini varsayılan olarak seçmek için yine dokununuz.
-		</p>
-		<p>
-			Sağ taraftaki QR kodu digitalcoin adresinizi içerir ve başka birisinin ödeme yapmak için onu taraması mümkündür.
-=======
-			Ekranın üst kısmı Bitcoin ve seçilen milli para birimi olarak bakiyenizi gösterir.
+			Ekranın üst kısmı Digitalcoin ve seçilen milli para birimi olarak bakiyenizi gösterir.
 			Para birimleri listesine gitmek için dokununuz, ve varsayılan olarak seçmek için dövizlerden birine dokununuz
 		</p>
 		<p>
-			Sağdaki QR kodu bitcoin adresinizi içerir ve başka birisinin taraması için kullanılabilir.
->>>>>>> upstream/master
+			Sağdaki QR kodu digitalcoin adresinizi içerir ve başka birisinin taraması için kullanılabilir.
 			Daha büyük bir sürümünü elde etmek için QR koduna dokununuz.
 		</p>
 		<p>
@@ -24,13 +16,8 @@
 			Gönderici ve alıcıları adres defterine eklemek için herhangi bir unsura dokununuz.
 		</p>
 		<p>
-<<<<<<< HEAD
-			Digitalcoin göndermek ya da talepte bulunmak için eylem çubuğundaki düğmelere dokunabilirsiniz.
-			Seçenekler menüsünde daha fazla seçenek bulabilirsiniz.
-=======
-			Eylem çubuğundaki düğmelere dokunarak bitcoin talep edebilir ya da gönderebilirsiniz.
+			Eylem çubuğundaki düğmelere dokunarak digitalcoin talep edebilir ya da gönderebilirsiniz.
 			Seçenekler menüsünde daha fazla seçenek mevcuttur.
->>>>>>> upstream/master
 		</p>
 	]]>
 	</string>

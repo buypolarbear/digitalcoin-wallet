@@ -12,11 +12,7 @@
 • عرض رصيدك الحالي من البيتكوين باستخدام التطبيقات المصغرة App Widget.
 
 يمكنك الحصول على معلومات أكثر عن البيتكوين في الموقع التالي
-<<<<<<< HEAD
 http://digitalcoin.co
-=======
-https://bitcoin.org
->>>>>>> upstream/master
 
 إذا أردت المساهمة في مشروع محفظة البيتكوين Digitalcoin Wallet، قم بزيارة
 https://github.com/HashEngineering/digitalcoin-wallet

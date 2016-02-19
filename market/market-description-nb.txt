@@ -1,23 +1,17 @@
-<b>Ha alltid dine bitcoins med deg, i lommen din!</b> Du betaler ved å raskt skanne en QR-kode. Som en kjøpmann, får du betaling pålitelig og kjapt. Digitalcoin Wallet er den første Digitalcoin mobilappen, og kanskje også den sikreste!
+<b>Ha alltid dine digitalcoins med deg, i lommen din!</b> Du betaler ved å raskt skanne en QR-kode. Som en kjøpmann, får du betaling pålitelig og kjapt. Digitalcoin Wallet er den første Digitalcoin mobilappen, og kanskje også den sikreste!
 
 
 <b>FUNKSJONER</b>
 
 • Ingen registrering, webtjeneste eller sky trengs! Denne lommeboken er desentralisert og peer-to-peer.
-• Visning av bitcoinbeløpet i BTC, mBTC og μBTC.
+• Visning av digitalcoinbeløpet i BTC, mBTC og μBTC.
 • Konvertering til og fra nasjonale valutaer.
-<<<<<<< HEAD
-• Sende og motta bitcoin via NFC, QR-koder eller Digitalcoin-URLer.
+• Sende og motta digitalcoin via NFC, QR-koder eller Digitalcoin-URLer.
 • Adressebok for regelmessig brukte Digitalcoin-adresser.
-• Når du er frakoblet, kan du fortsatt betale via Bluetooth.
-=======
-• Sende og motta bitcoin via NFC, QR-koder eller Bitcoin-URLer.
-• Adressebok for regelmessig brukte Bitcoin-adresser.
 • Når du er frakoblet, kan du fortsatt betale via blåtann.
->>>>>>> upstream/master
 • Systemvarsling for mottatte mynter.
 • Sveiping av papirlommebøker (f.eks. de som brukes til kaldlagring).
-• Miniprogram for saldo over bitcoins.
+• Miniprogram for saldo over digitalcoins.
 
 
 <b>BIDRA</b>
@@ -34,9 +28,7 @@ https://www.transifex.com/projects/p/bitcoin-wallet/
 
 <b>ANBEFALINGER</b>
 
-• Mange mobillommebøker baserer sin kildekode på Digitalcoin Wallet. Eksempler: blockchain.info, Hive og KnC.
-• Anbefalt mobillommebok av https://bitcoin.org
-• Anbefalt av BitPay.
+• Anbefalt mobillommebok av http://digitalcoin.co
 
 
 <i>Bruk på eget ansvar!</i>

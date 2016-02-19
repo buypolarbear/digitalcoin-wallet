@@ -1,5 +1,5 @@
 <<<<<<< HEAD
 Τα δικά σας Digitalcoins, στην τσέπη σας!
 =======
-Τα δικά σας Bitcoin, στην τσέπη σας!
+Τα δικά σας Digitalcoin, στην τσέπη σας!
 >>>>>>> upstream/master

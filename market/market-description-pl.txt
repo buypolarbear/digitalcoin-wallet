@@ -11,13 +11,8 @@ WŁAŚCIWOŚCI:
 • System powiadomień dla przychodzących transakcji.
 • Widget aplikacji dla stanu konta.
 
-<<<<<<< HEAD
 Dowiedz się więcej o Digitalcoin
 http://digitalcoin.co
-=======
-Dowiedz się więcej o Bitcoin
-https://bitcoin.org
->>>>>>> upstream/master
 
 Jeśli chcesz przyczynić się do rozwoju Digitalcoin Wallet to projekt znajduje się pod adresem
 https://github.com/HashEngineering/digitalcoin-wallet

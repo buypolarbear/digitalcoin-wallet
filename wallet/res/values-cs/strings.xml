@@ -27,9 +27,9 @@
   <string name="wallet_transactions_options_filter_received">Obdrženo</string>
   <string name="wallet_transactions_options_filter_all">Oboje</string>
   <string name="wallet_transactions_options_filter_sent">Zasláno</string>
-  <string name="wallet_transactions_fragment_empty_text_received">Zatím žádné bitcoiny neobdrženy</string>
-  <string name="wallet_transactions_fragment_empty_text_sent">Zatím žádné bitcoiny neodeslány</string>
-  <string name="wallet_transactions_fragment_empty_text_howto">Jak získat Bitcoiny?\n\nSměnou za klasické peníze,\nprodejem zboží nebo služeb\nnebo vyděláním prací.</string>
+  <string name="wallet_transactions_fragment_empty_text_received">Zatím žádné digitalcoiny neobdrženy</string>
+  <string name="wallet_transactions_fragment_empty_text_sent">Zatím žádné digitalcoiny neodeslány</string>
+  <string name="wallet_transactions_fragment_empty_text_howto">Jak získat Digitalcoiny?\n\nSměnou za klasické peníze,\nprodejem zboží nebo služeb\nnebo vyděláním prací.</string>
   <string name="wallet_transactions_row_warning_backup">Gratulujeme, přijal jste vaši první platbu! Už jste si &lt;u&gt;zazálohoval vaši peněženku&lt;/u&gt;, aby jste se ochránil proti ztrátě?</string>
   <string name="wallet_transactions_fragment_coinbase">vytěženo</string>
   <string name="wallet_transactions_fragment_internal">interní</string>

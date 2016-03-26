@@ -18,6 +18,7 @@
 package de.schildbach.wallet.ui.send;
 
 import org.bitcoinj.core.Coin;
+import org.bitcoinj.core.CoinDefinition;
 
 /**
  * @author Andreas Schildbach
@@ -27,18 +28,18 @@ public enum FeeCategory
 	/**
 	 * We don't care when it confirms, but it should confirm at some time. Can be days or weeks.
 	 */
-	ECONOMIC(Coin.valueOf(5000)), // 0.05 mBTC
+	ECONOMIC(Coin.valueOf(5000000)), // 0.05 mBTC
 
 	/**
 	 * Under normal network conditions, confirms within the next 15 minutes. Can take longer, but this should be an
 	 * exception. And it should not take days or weeks.
 	 */
-	NORMAL(Coin.valueOf(10000)), // 0.1 mBTC
+	NORMAL(Coin.valueOf(CoinDefinition.DEFAULT_MIN_TX_FEE.getValue())), // 0.1 mBTC
 
 	/**
 	 * Confirms within the next 15 minutes.
 	 */
-	PRIORITY(Coin.valueOf(50000)); // 0.5 mBTC
+	PRIORITY(Coin.valueOf(CoinDefinition.DEFAULT_MIN_TX_FEE.getValue()*5)); // 0.5 mBTC
 
 	public final Coin feePerKb;
 

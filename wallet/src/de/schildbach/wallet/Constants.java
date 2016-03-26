@@ -111,7 +111,7 @@ public final class Constants
 	public static final String MIMETYPE_TRANSACTION = "application/x-"+CoinDefinition.coinTicker.toLowerCase()+"tx";
 
 	/** MIME type used for transmitting wallet backups. */
-	public static final String MIMETYPE_WALLET_BACKUP = "application/x-bitcoin-wallet-backup";
+	public static final String MIMETYPE_WALLET_BACKUP = "application/x-"+CoinDefinition.coinTicker.toLowerCase()+"-wallet-backup";
 
 	/** Number of confirmations until a transaction is fully confirmed. */
 	public static final int MAX_NUM_CONFIRMATIONS = 7;

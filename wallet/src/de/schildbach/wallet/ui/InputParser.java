@@ -89,7 +89,7 @@ public abstract class InputParser
 			{
 				try
 				{
-					final byte[] serializedPaymentRequest = Qr.decodeBinary(input.substring(9));
+					final byte[] serializedPaymentRequest = Qr.decodeBinary(input.substring((CoinDefinition.coinURIScheme.toUpperCase()+ ":-").length()));
 
 					parseAndHandlePaymentRequest(serializedPaymentRequest);
 				}

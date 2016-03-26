@@ -222,9 +222,9 @@
   <string name="preferences_category_labs">Labo</string>
   <string name="preferences_precision_title">Dénomination et précision</string>
   <string name="preferences_precision_summary">Unité à utiliser pour l\'affichage. Ceci n\'affecte pas les calculs.</string>
-  <string name="preferences_precision_labels_8">BTC, 8 décimales</string>
-  <string name="preferences_precision_labels_6">BTC, 6 décimales</string>
-  <string name="preferences_precision_labels_4">BTC, 4 décimales</string>
+  <string name="preferences_precision_labels_8">DGC, 8 décimales</string>
+  <string name="preferences_precision_labels_6">DGC, 6 décimales</string>
+  <string name="preferences_precision_labels_4">DGC, 4 décimales</string>
   <string name="preferences_precision_labels_2_3">mBTC, 2 décimales</string>
   <string name="preferences_precision_labels_0_6">µBTC, pas de décimale</string>
   <string name="preferences_own_name_title">Votre nom</string>

@@ -4,7 +4,7 @@
 <b>ZNAČAJKE</b>
 
 • Bez registracije, web servis ili cloud potreban! Ovaj novčanik je de-centraliziran i klijent prema klijentu.
-• Prikaži Digitalcoin iznos u BTC, mBTC i uBTC.
+• Prikaži Digitalcoin iznos u DGC, mBTC i uBTC.
 • Pretvorba u ili iz nacionalnih valuta.
 • Slanje i primanje Digitalcoina s NFC, QR kodom ili Digitalcoin URL-om.
 • Adresar za često korištene Digitalcoin adrese.

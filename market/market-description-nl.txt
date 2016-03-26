@@ -4,7 +4,7 @@
 <b>FEATURES</b>
 
 • Geen registratie, webservice of cloud vereist! De portemonnee is decentraal en peer-to-peer.
-• Toon Digitalcoin bedrag in BTC, mBTC en µBTC.
+• Toon Digitalcoin bedrag in DGC, mBTC en µBTC.
 • Conversie van en naar nationale valuta.
 * Verzend en ontvang Digitalcoin via NFC, QR-codes of Digitalcoin-URL's
 • Adresboek voor regelmatig gebruikte Digitalcoin-adressen.

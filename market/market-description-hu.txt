@@ -26,7 +26,7 @@ https://github.com/HashEngineering/digitalcoin-wallet
 
 
 =======
-• Digitalcoin összeg megjelenítési módok: BTC, mBTC és µBTC.
+• Digitalcoin összeg megjelenítési módok: DGC, mBTC és µBTC.
 • Átváltás a saját valutádra, oda-vissza.
 • Digitalcoin küldés és fogadás NFC-n, QR kódokon vagy Digitalcoin URL-eken keresztül.
 • Címtár a rendszeresen használt Digitalcoin címek számára.

@@ -4,7 +4,7 @@
 <b>FUNKTIONER</b>
 
 • Ingen registrering, web- eller molntjänst behövs! Digitalcoin Wallet är decentraliserad och peer-to-peer.
-• Visa summa digitalcoin i BTC, mBTC eller µBTC.
+• Visa summa digitalcoin i DGC, mBTC eller µBTC.
 • Konventering till och från nationell valuta.
 • Skicka och ta emot digitalcoin via NFC, QR-koder eller en Digitalcoin-URL.
 • Adressbok för de Digitalcoinadresser man använder ofta.

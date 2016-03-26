@@ -4,7 +4,7 @@
 <b>FUNKSJONER</b>
 
 • Ingen registrering, webtjeneste eller sky trengs! Denne lommeboken er desentralisert og peer-to-peer.
-• Visning av digitalcoinbeløpet i BTC, mBTC og μBTC.
+• Visning av digitalcoinbeløpet i DGC, mBTC og μBTC.
 • Konvertering til og fra nasjonale valutaer.
 • Sende og motta digitalcoin via NFC, QR-koder eller Digitalcoin-URLer.
 • Adressebok for regelmessig brukte Digitalcoin-adresser.

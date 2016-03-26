@@ -4,7 +4,7 @@
 <b>CARACTERÍSTICAS</b>
 
 • ¡No requiere registro, servidor en la nube o servicio web! Este monedero es auténticamente descentralizado y entre pares (peer-to-peer).
-• Muestra la cantidad de digitalcoins en BTC, mBTC, y µBTC.
+• Muestra la cantidad de digitalcoins en DGC, mBTC, y µBTC.
 • Conversión hacia y desde divisas nacionales.
 • Envío y recepción de digitalcoins mediante NFC, códigos QR o identificadores URL Digitalcoin.
 • Libreta de direcciones para guardar las direcciones Digitalcoin más utilizadas.

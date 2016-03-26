@@ -3,7 +3,7 @@
 <b>CARACTERÍSTIQUES</b>
 
 • Sense enregistrar-se ni amb necessitat d'un servei web o al núvol!. Aquesta cartera és descentralitzada i de parell a parell.
-• Mostra l'import de digitalcoin en BTC, mBTC i µBTC.
+• Mostra l'import de digitalcoin en DGC, mBTC i µBTC.
 • Conversió cap a i des de divises nacionals.
 • Enviar i rebre digitalcoins a través d'NFC, codis QR i adreces Digitalcoin.
 • Llibreta d'adreces per a les adreces utilitzades regularment.

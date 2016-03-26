@@ -4,7 +4,7 @@
 <b>CARACTERÍSTICAS</b>
 
 • Sem necessidade de cadastro, serviço web ou hospedagem! Esta carteira é descentralizada e "peer to peer".
-• Exibe a quantidade de Digitalcoins em BTC, mBTC e µBTC.
+• Exibe a quantidade de Digitalcoins em DGC, mBTC e µBTC.
 • Conversão para moedas nacionais.
 • Envio e recebimento de Digitalcoins via NFC, códigos QR ou endereços Digitalcoin.
 • Catálogo para guardar os endereços mais utilizados.
